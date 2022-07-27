@@ -44,6 +44,7 @@ DEFAULT_APPS = [
 ]
 LOCAL_APPS = [
     "pages",
+    "funds",
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
