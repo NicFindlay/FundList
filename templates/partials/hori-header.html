@@ -272,8 +272,9 @@
                             class="mdi mdi-lock font-size-16 align-middle me-1"></i> Lock screen</a>
                     <div class="dropdown-divider"></div>
                     {% if user.is_authenticated %}
-                        <a class="dropdown-item" href="{% url 'settings' %}"><i class="mdi mdi-cog font-size-16 align-middle me-1"></i> Settings</a>
-                        <a class="dropdown-item" href="{% url 'account_logout'%}"><i
+                    <a class="dropdown-item" href="{% url 'settings' %}"><i
+                            class="mdi mdi-cog font-size-16 align-middle me-1"></i> Settings</a>
+                    <a class="dropdown-item" href="{% url 'account_logout'%}"><i
                             class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
                     {% endif %}
                 </div>
@@ -283,13 +284,15 @@
             <input type="hidden" id="login-msg" value="{{message}}">
             <button type="button" class="btn btn-primary" id="borderedToast1Btn" hidden>Primary toast</button>
             <div style="z-index: 11">
-                <div id="borderedToast1" class="toast overflow-hidden mt-3 position-absolute top-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div id="borderedToast1" class="toast overflow-hidden mt-3 position-absolute top-0 end-0" role="alert"
+                    aria-live="assertive" aria-atomic="true">
                     <div class="align-items-center text-white bg-primary border-0">
                         <div class="d-flex">
                             <div class="toast-body">
                                 {{message}}
                             </div>
-                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
                         </div>
                     </div>
                 </div>
