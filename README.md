@@ -29,8 +29,8 @@
 `pip install django-embed-video`  
 `pip install django-crispy-forms`  
 `pip install django-embed-video` 
-`pip install django-otp`
-`pip install django-allauth-2fa` 
+`pip install django-otp`  
+`pip install django-allauth-2fa`   
 
 
 ### Installing virtualenv	
@@ -41,58 +41,52 @@
 
  
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.#databaseservername#',
-        'NAME': 'Your Database Name',
-        'USER' : 'Database User Name',
-        'PASSWORD' : 'Your Password',
-        'HOST' : "Write down Host",
-        'PORT' : 'Write down port',
-                
-    }
-}
+DATABASES = {  
+    'default': {  
+        'ENGINE': 'django.db.backends.#databaseservername#',  
+        'NAME': 'Your Database Name',  
+        'USER' : 'Database User Name',  
+        'PASSWORD' : 'Your Password',  
+        'HOST' : "Write down Host",  
+        'PORT' : 'Write down port',   
+    }  
+}  
 
 ### To Create superuser 
 
-->python manage.py createsuperuser
-	enter username = your_username
-	enter your Email Address
-	enter your password
-	enter your password again 
--> Windows:-python manage.py migrate
--> Linux:-python3 manage.py migrate
+python3 manage.py createsuperuser  
+python3 manage.py migrate  
 
 
 ### To load Static Files:
 
->Go to /setings.py
--Add following command:-
+Go to /setings.py  
+-Add following command:-  
+    
+STATIC_URL = '/static/'  
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]  
+STATIC_ROOT= os.path.join(BASE_DIR,'assets')  
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
-STATIC_ROOT= os.path.join(BASE_DIR,'assets')
-
->Run Command In Terminal
--python manage.py collectstatic
+Run Command In Terminal  
+`python manage.py collectstatic`  
 
 ### Authentication Configuration
 
-Linux:-Install Package:-pip3 install Django-Verify-Email
--Goto settings.py of Main Directory
+`pip3 install Django-Verify-Email`  
 
--SMTP CONFIGURATION
-	EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-	EMAIL_HOST = 'smtp.gmail.com'
-	EMAIL_PORT = 587
-	EMAIL_USE_TLS = True
-	EMAIL_HOST_USER = '#####YOUR EMAIL ADDRESS########'
-	EMAIL_HOST_PASSWORD = '#####YOUR HOST Password########'
-	DEFAULT_FROM_EMAIL = '#####YOUR EMAIL ADDRESS########'
-	SERVER_EMAIL = '#####YOUR EMAIL ADDRESS########'
+Goto settings.py of Main Directory
+    
+-SMTP CONFIGURATION  
+	EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  
+	EMAIL_HOST = 'smtp.gmail.com'  
+	EMAIL_PORT = 587  
+	EMAIL_USE_TLS = True  
+	EMAIL_HOST_USER = '#####YOUR EMAIL ADDRESS########'  
+	EMAIL_HOST_PASSWORD = '#####YOUR HOST Password########'  
+	DEFAULT_FROM_EMAIL = '#####YOUR EMAIL ADDRESS########'  
+	SERVER_EMAIL = '#####YOUR EMAIL ADDRESS########'  
 	 
-
-
+	 
 # Run the project
 
 `python3 manage.py runserver`
