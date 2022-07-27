@@ -1,0 +1,161 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block title %}Echarts{% endblock title %}
+
+{% block content %}
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Echarts</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Charts</a></li>
+                                        <li class="breadcrumb-item active">Echarts</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Line Chart</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="line-chart" data-colors='["#34c38f", "#ccc"]' class="e-charts"></div>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Mix Line-Bar</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="mix-line-bar" data-colors='["#34c38f", "#1c84ee", "#ef6767"]' class="e-charts"></div>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Doughnut Chart</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="doughnut-chart" data-colors='["#1c84ee", "#ffcc5a", "#ef6767", "#16daf1", "#34c38f"]' class="e-charts"></div>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Pie Chart</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="pie-chart" data-colors='["#ef6767", "#34c38f", "#16daf1", "#ffcc5a", "#1c84ee"]' class="e-charts"></div>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Scatter Chart</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="scatter-chart" data-colors='["#34c38f"]' class="e-charts"></div>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Bubble Chart</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="bubble-chart" data-colors='["rgb(28, 132, 238)", "rgb(143, 148, 255)", "rgba(28, 132, 238, 0.5)", "rgb(52, 195, 143)", "rgb(111, 255, 203)",  "rgb(52, 195, 143, 0.5)"]' class="e-charts"></div>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Candlestick Chart</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="candlestick-chart" data-colors='["#1c84ee", "#34c38f"]' class="e-charts"></div>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Gauge Chart</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="gauge-chart" data-colors='["#34c38f", "#1c84ee", "#ef6767"]' class="e-charts"></div>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+                            
+            {% block footer %}
+                {% include 'partials/footer.html' %}
+            {% endblock footer %}
+        </div>
+        <!-- end main content-->
+{% endblock content %}
+
+{% block extra_js %}
+    <!-- echarts js -->
+    <script src="{% static 'libs/echarts/dist/echarts.min.js'%}"></script>
+    <!-- echarts init -->
+    <script src="{% static 'js/pages/echarts.init.js'%}"></script>
+{% endblock extra_js %}
