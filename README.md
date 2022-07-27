@@ -28,7 +28,9 @@
 `pip install django-allauth`  
 `pip install django-embed-video`  
 `pip install django-crispy-forms`  
-`pip install django-embed-video`  
+`pip install django-embed-video` 
+`pip install django-otp`
+`pip install django-allauth-2fa` 
 
 
 ### Installing virtualenv	
