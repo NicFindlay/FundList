@@ -1,48 +1,52 @@
-FundList Installation in Django Python
-
->>>Installation Python
- ->https://www.python.org/downloads/
+#FundList Installation in Django Python
 
 
-Initial Setup
-------------------------------------------------------------
-yarn install							-> This would install all the required dependencies in the node_modules folder.
-gulp									-> 	Runs the project locally, starts the development server and watches for any changes in your code, including your HTML, javascript, sass, etc. The development server is accessible at http://localhost:8000.
-python -m venv environment_name			-> Create Virtual Environment on linux & mac OS
-source environment_name/bin/activate	-> Activate Environment on Linux & mac OS
-pip3 install django						-> Install Django on linux & mac OS
-python3 manage.py runserver				-> Run App on linux & mac OS
+
+#Initial Setup
+
+yarn install							
+-> This would install all the required dependencies in the node_modules folder.
+
+gulp									
+-> 	Runs the project locally, starts the development server and watches for any changes in your code, including your HTML, javascript, sass, etc. The development server is accessible at http://localhost:8000.
+
+python -m venv environment_name			
+-> Create Virtual Environment on linux & mac OS
+
+source environment_name/bin/activate	
+-> Activate Environment on Linux & mac OS
+
+pip3 install django						
+-> Install Django on linux & mac OS
+
+python3 manage.py runserver				
+-> Run App on linux & mac OS
 
 
-Install few libraries
-------------------------------------------------------------
+#Install few libraries
+
 pip install django-allauth
-pip3 install django-embed-video
+pip install django-embed-video
 pip install django-crispy-forms
+pip install django-embed-video
 
 
->>>Installing virtualenv	
-  #linux & mac os
-   ->python3 -m pip install --user virtualenv
-  #Windows
-  ->py -m pip install --user virtualenv
-
-
->>>Create Virtual Environment
-  #linux & mac os
-  ->python3 -m venv environment_name
-  #Windows
-  ->python -m venv environment_name
-
->>>Activate Environment
-  #Linux & mac os
-  ->source environment_name/bin/activate
-  #Windows
-  ->environment_name\Scripts\activate
+# Installing virtualenv	
  
+python3 -m pip install --user virtualenv
 
->>>Install few libraries
-->pip install django-embed-video
+
+
+# Create Virtual Environment
+
+python3 -m venv environment_name
+
+
+# Activate Environment
+
+source environment_name/bin/activate
+
+ 
 
 DATABASES = {
     'default': {
@@ -55,7 +59,9 @@ DATABASES = {
                 
     }
 }
->>>To Create superuser 
+
+# To Create superuser 
+
 ->python manage.py createsuperuser
 	enter username = your_username
 	enter your Email Address
@@ -64,9 +70,12 @@ DATABASES = {
 -> Windows:-python manage.py migrate
 -> Linux:-python3 manage.py migrate
 
->>>To load Static Files:-
->Go to Skote/setings.py
+
+# To load Static Files:
+
+>Go to /setings.py
 -Add following command:-
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 STATIC_ROOT= os.path.join(BASE_DIR,'assets')
@@ -74,8 +83,8 @@ STATIC_ROOT= os.path.join(BASE_DIR,'assets')
 >Run Command In Terminal
 -python manage.py collectstatic
 
->>>Authentication Configuration
-Windwos:-Install Package:-pip install Django-Verify-Email
+# Authentication Configuration
+
 Linux:-Install Package:-pip3 install Django-Verify-Email
 -Goto settings.py of Main Directory
 
@@ -95,9 +104,8 @@ Linux:-Install Package:-pip3 install Django-Verify-Email
 
 
 
-
->>>To Set Default Layout
- >Goto templates/partial/base.html
+# To Set Default Layout
+ > Goto templates/partial/base.html
  
 <!--===========================================================================-->
 			<!--Vertical Layout View-->
