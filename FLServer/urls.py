@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-from dason import views
+from FLServer import views
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
