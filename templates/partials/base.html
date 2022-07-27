@@ -27,18 +27,17 @@
 
 </head>
 
-<body {% block extra_body %} data-topbar="dark"{% endblock extra_body %}>
+<body {% block extra_body %} data-topbar="dark" {% endblock extra_body %} data-layout="horizontal"
+    data-sidebar-size="sm">
     <!-- Begin page -->
     <div id="layout-wrapper">
         {% block header %}
         {% include "partials/header.html" %}
         {% endblock header %}
 
-        {% block left_sidebar %}
-        {% include 'partials/left-sidebar.html' %}
-        {% endblock left_sidebar %}
-
-
+        <!-- Removing menu subheader
+        {% include 'partials/hori-left-sidebar.html' %}
+-->
         {% block content %}
         {% block footer %}
         {% endblock footer %}
@@ -48,7 +47,7 @@
 
 
     {% block right_sidebar %}
-        {% include 'partials/right-sidebar.html'%}
+    {% include 'partials/right-sidebar.html'%}
     {% endblock right_sidebar %}
 
 
