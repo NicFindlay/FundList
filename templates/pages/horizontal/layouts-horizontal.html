@@ -1,0 +1,34 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block title %}Horizontal Layout{% endblock title %}
+{% block extra_css %}
+    <!-- plugin css -->
+    <link href="{% static 'libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css'%}" rel="stylesheet"
+        type="text/css" />
+{% endblock extra_css %}
+{% block extra_body %}data-layout="horizontal" data-topbar="dark"{% endblock extra_body %}
+
+
+{% block header %}
+    {% include 'partials/hori-header.html' %}
+{% endblock header %}
+    
+{% block left_sidebar %}
+    {% include "partials/hori-left-sidebar.html" %}
+{% endblock left_sidebar %}
+    
+{% block content %}
+{% include "partials/content.html" with title='Starter Page' pageview='Dason' %}
+{% endblock content %}
+
+{% block extra_js %}
+    <!-- apexcharts -->
+    <script src="{% static 'libs/apexcharts/dist/apexcharts.min.js'%}"></script>
+
+    <!-- Plugins js-->
+    <script src="{% static 'libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js'%}"></script>
+    <script src="{% static 'libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js'%}"></script>
+    <!-- dashboard init -->
+    <script src="{% static 'js/pages/dashboard.init.js'%}"></script>
+{% endblock extra_js %}

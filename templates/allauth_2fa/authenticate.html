@@ -1,0 +1,40 @@
+{% extends "account/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Two-Factor Authentication{% endblock title %}
+{% block content %}
+<div class="auth-full-page-content d-flex p-sm-5 p-4">
+    <div class="w-100">
+        <div class="d-flex flex-column h-100">
+            <div class="mb-4 mb-md-5 text-center">
+                <a href="{% url 'dashboard' %}" class="d-block auth-logo">
+                    <img src="{% static 'images/logo-sm.svg' %}" alt="" height="28"> <span class="logo-txt">Dason</span>
+                </a>
+            </div>
+            <div class="auth-content my-auto">
+                <div class="text-center">
+                    <div class="avatar-lg mx-auto">
+                        <div class="avatar-title rounded-circle bg-light">
+                            <i class="bx bxs-key h2 mb-0 text-primary"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-size-18 mt-4 text-center">Two Factor Authentication</h4>
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {{ form.otp_token|as_crispy_field}}
+                    <div class="d-grid mt-3">
+                        <button class="btn btn-primary waves-effect waves-light" type="submit">Authenticate</button>
+                    </div>
+                </form>
+            </div>
+            <div class="mt-4 mt-md-5 text-center">
+                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Dason   . Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end auth full page content -->
+{% endblock content %}

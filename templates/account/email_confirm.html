@@ -1,0 +1,48 @@
+{% extends "account/base.html" %}
+{% load static %}
+{% load account %}
+{% load i18n %}
+{% block title %}Email Confirm{% endblock title %}
+{% block content %}
+                    <div class="auth-full-page-content d-flex p-sm-5 p-4">
+                        <div class="w-100">
+                            <div class="d-flex flex-column h-100">
+                                <div class="mb-4 mb-md-5 text-center">
+                                    <a href="{% url 'dashboard' %}" class="d-block auth-logo">
+                                        <img src="{% static 'images/logo-sm.svg' %}" alt="" height="28"> <span class="logo-txt">Dason</span>
+                                    </a>
+                                </div>
+                                <div class="auth-content my-auto">
+                                    <div class="text-center">
+                                        <div class="avatar-lg mx-auto">
+                                            <div class="avatar-title rounded-circle bg-light">
+                                                <i class="bx bx-mail-send h2 mb-0 text-primary"></i>
+                                            </div>
+                                        </div>
+                                        <div class="p-2 mt-4">
+                                            <h4>{% trans "Confirm Email Address" %}!</h4>
+                                            {% if confirmation %}
+                                            {% user_display confirmation.email_address.user as user_display %}
+                                            <p class="text-muted">{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user <strong>{{ user_display }}</strong>.{% endblocktrans %}</p>
+                                            <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+                                                {% csrf_token %}
+                                                <div class="mt-4">
+                                                    <button type="submit" class="btn btn-primary w-100">{% trans 'Confirm' %}</button>
+                                                </div>
+                                            </form>
+                                            {% else %}
+
+                                            {% url 'account_email' as email_url %}
+                                            <p class="text-muted">{% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new e-mail confirmation request</a>.{% endblocktrans %}</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 mt-md-5 text-center">
+                                    <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Dason   . Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end auth full page content -->
+{% endblock content %}

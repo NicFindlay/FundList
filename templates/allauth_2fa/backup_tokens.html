@@ -1,0 +1,85 @@
+{% extends "account/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+{% block title %}Backup Tokens{% endblock title %}
+{% block content %}
+        <div class="auth-full-page-content d-flex p-sm-5 p-4">
+            <div class="w-100">
+                <div class="d-flex flex-column h-100">
+                    <div class="mb-4 mb-md-5 text-center">
+                        <a href="{% url 'dashboard' %}" class="d-block auth-logo">
+                            <img src="{% static 'images/logo-sm.svg' %}" alt="" height="28"> <span class="logo-txt">Dason</span>
+                        </a>
+                    </div>
+                    <div class="auth-content my-auto">
+                        <div class="text-center">
+                            <div class="avatar-lg mx-auto">
+                                <div class="avatar-title rounded-circle bg-light">
+                                    <i class="bx bx-list-ul h2 mb-0 text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <h4 class="font-size-18 text-center">Two-Factor Authentication Backup</h4>
+                            </div>
+                            {% if backup_tokens %}
+                            {% if reveal_tokens %}
+                            <div class="mt-3 pt-2">
+                                <div class="position-relative">
+                                    <button class="btn btn-primary btn-sm position-absolute top-0 end-0" onclick="DownloadToken()"><i class="mdi mdi-download align-middle font-size-14"></i></button>
+                                </div>
+                                <div class="text-start col-lg" id="b-token">
+                                    <ul>
+                                        {% for token in backup_tokens %}
+                                        <li class="">{{ token.token }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            {% else %}
+                            {% trans 'Backup tokens have been generated, but are not revealed here for security reasons. Press the button below to generate new ones.' %}
+                            {% endif %}
+                            {% else %}
+                            {% trans 'No tokens. Press the button below to generate some.' %}
+                            {% endif %}
+                        </div>
+                        <div class="mt-3">
+                            <form method="post" class="text-center">
+                                {% csrf_token %}
+                                <div class="d-flex justify-content-center mt-4 pt-2">
+                                    <button type="submit" class="btn btn-primary me-3">Generate backup tokens</button>
+                                    <a href="{% url 'settings' %}" class="btn btn-primary">Back To Settings</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="mt-4 mt-md-5 text-center">
+                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Dason   . Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+<script>
+    function DownloadToken(){
+        var arr = "Dason - Dason - Admin & Dashboard Template\n\nSAVE YOUR BACKUP CODES \nKeep these backup codes somewhere safe but accessible\n\n"
+        let i=1;
+        var token = document.querySelectorAll("#b-token li");
+        
+        
+        token.forEach(element => {
+            console.log(element.innerHTML)
+            arr += i+'. ' + element.innerHTML + "\n";
+            i++
+        });
+        console.log(arr)
+        var blob = new Blob([arr], { type: "text/plain;charset=utf-8" });
+        setTimeout(() => {
+            saveAs(blob, "Backup-codes.txt");
+        }, 0);
+    }
+</script>
+{% endblock extra_js %}

@@ -1,0 +1,85 @@
+// 
+// _table.scss
+// 
+
+.table {
+  th {
+    font-weight: $font-weight-bold;
+  }
+
+  .table-light {
+    color: $body-color;
+    border-color: $table-border-color;
+    background-color: $table-head-bg;
+  }
+}
+
+.table-bordered {
+  border: $table-border-width solid $table-border-color;
+}
+
+
+.table-dark>:not(:last-child)>:last-child>* {
+  border-bottom-color: $table-dark-border-color;
+}
+
+.table-nowrap {
+
+  th,
+  td {
+    white-space: nowrap;
+  }
+}
+
+
+.table> :not(:first-child) {
+  border-top: 0;
+}
+
+
+body[data-layout-mode="dark"] {
+
+  // table 
+  .table {
+    border-color: lighten($gray-dark-200, 5%);
+    color: $gray-dark-400;
+  }
+
+  .table-bordered {
+    border-color: $gray-dark-300;
+  }
+
+
+  .table-dark>:not(:last-child)>:last-child>* {
+    border-color: $gray-dark-300;
+  }
+
+
+  .table>:not(:last-child)>:last-child>* {
+    border-bottom-color: $gray-dark-300;
+  }
+
+  .table-striped>tbody>tr:nth-of-type(odd) {
+    --bs-table-striped-bg: #363a38;
+    --bs-table-striped-color: $gray-dark-400;
+  }
+
+  .table-hover>tbody>tr:hover {
+    --bs-table-hover-bg: #363a38;
+    --bs-table-hover-color: $gray-dark-400;
+  }
+
+  .table .table-light {
+    --bs-table-accent-bg: #363a38;
+    color: $gray-dark-400;
+  }
+
+  // table
+  .table-dark {
+    background-color: $gray-dark-300;
+
+    >:not(caption)>*>* {
+      background-color: $gray-dark-300;
+    }
+  }
+}
