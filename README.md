@@ -4,38 +4,38 @@
 
 ## Initial Setup
 
-`yarn install`__						
+`yarn install`  						
 -> This would install all the required dependencies in the node_modules folder.
 
-`gulp`__						
+`gulp`  						
 -> 	Runs the project locally, starts the development server and watches for any changes in your code, including your HTML, javascript, sass, etc. The development server is accessible at http://localhost:8000.
 
-`python -m venv environment_name`__			
+`python -m venv environment_name`  		
 -> Create Virtual Environment on linux & mac OS
 
-`csource environment_name/bin/activate	`__
+`csource environment_name/bin/activate	`  
 -> Activate Environment on Linux & mac OS
 
 `pip3 install django`	__				
 -> Install Django on linux & mac OS
 
-`python3 manage.py runserver	`	__		
+`python3 manage.py runserver	`	  		
 -> Run App on linux & mac OS
 
 
 ## Install few libraries
 
-`pip install django-allauth`__
-`pip install django-embed-video`__
-`pip install django-crispy-forms`__
-`pip install django-embed-video`__
+`pip install django-allauth`  
+`pip install django-embed-video`  
+`pip install django-crispy-forms`  
+`pip install django-embed-video`  
 
 
 ### Installing virtualenv	
  
-`python3 -m pip install --user virtualenv`__
-`python3 -m venv environment_name`__
-`source environment_name/bin/activate`__
+`python3 -m pip install --user virtualenv`  
+`python3 -m venv environment_name`  
+`source environment_name/bin/activate`  
 
  
 
