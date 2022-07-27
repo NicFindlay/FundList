@@ -52,11 +52,15 @@ DATABASES = {
     }  
 }  
 
-### To Create superuser 
+### To create superuser 
 
 python3 manage.py createsuperuser  
 python3 manage.py migrate  
 
+### Database Changes
+Change your models (in models.py).
+Run `python manage.py makemigrations` to create migrations for those changes
+Run `python manage.py migrate` to apply those changes to the database.
 
 ### To load Static Files:
 
