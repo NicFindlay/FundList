@@ -1,25 +1,25 @@
-#FundList Installation in Django Python
+# Installation in Django Python
 
 
 
-#Initial Setup
+## Initial Setup
 
-yarn install							
+`code` yarn install							
 -> This would install all the required dependencies in the node_modules folder.
 
-gulp									
+`code` gulp									
 -> 	Runs the project locally, starts the development server and watches for any changes in your code, including your HTML, javascript, sass, etc. The development server is accessible at http://localhost:8000.
 
-python -m venv environment_name			
+`code` python -m venv environment_name			
 -> Create Virtual Environment on linux & mac OS
 
-source environment_name/bin/activate	
+`code` source environment_name/bin/activate	
 -> Activate Environment on Linux & mac OS
 
-pip3 install django						
+`code` pip3 install django						
 -> Install Django on linux & mac OS
 
-python3 manage.py runserver				
+`code` python3 manage.py runserver				
 -> Run App on linux & mac OS
 
 
@@ -31,18 +31,18 @@ pip install django-crispy-forms
 pip install django-embed-video
 
 
-# Installing virtualenv	
+## Installing virtualenv	
  
 python3 -m pip install --user virtualenv
 
 
 
-# Create Virtual Environment
+### Create Virtual Environment
 
 python3 -m venv environment_name
 
 
-# Activate Environment
+### Activate Environment
 
 source environment_name/bin/activate
 
@@ -60,7 +60,7 @@ DATABASES = {
     }
 }
 
-# To Create superuser 
+### To Create superuser 
 
 ->python manage.py createsuperuser
 	enter username = your_username
@@ -71,7 +71,7 @@ DATABASES = {
 -> Linux:-python3 manage.py migrate
 
 
-# To load Static Files:
+### To load Static Files:
 
 >Go to /setings.py
 -Add following command:-
@@ -83,7 +83,7 @@ STATIC_ROOT= os.path.join(BASE_DIR,'assets')
 >Run Command In Terminal
 -python manage.py collectstatic
 
-# Authentication Configuration
+### Authentication Configuration
 
 Linux:-Install Package:-pip3 install Django-Verify-Email
 -Goto settings.py of Main Directory
@@ -104,7 +104,7 @@ Linux:-Install Package:-pip3 install Django-Verify-Email
 
 
 
-# To Set Default Layout
+### To Set Default Layout
  > Goto templates/partial/base.html
  
 <!--===========================================================================-->
