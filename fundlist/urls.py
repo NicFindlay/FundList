@@ -15,25 +15,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-from fundlist import views
+from funds import views as fund_views
+from fundlist import views as fundlist_views
+
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-    path("", views.get_dashboard),
+    path("", fundlist_views.get_dashboard),
+    path("funds/", fund_views.get_funds),
     path("admin/", admin.site.urls),
     # # Dashboard
-    path("", views.DashboardView.as_view(), name="dashboard"),
-    path("settings", views.Settings.as_view(), name="settings"),
+    path("", fundlist_views.DashboardView.as_view(), name="dashboard"),
+    path("settings", fundlist_views.Settings.as_view(), name="settings"),
     # # Custum change password done page redirect
     path(
         "account/password/change/",
-        login_required(views.MyPasswordChangeView.as_view()),
+        login_required(fundlist_views.MyPasswordChangeView.as_view()),
         name="account_change_password",
     ),
     # # Custum set password done page redirect
     path(
         "account/password/set/",
-        login_required(views.MyPasswordSetView.as_view()),
+        login_required(fundlist_views.MyPasswordSetView.as_view()),
         name="account_set_password",
     ),
     # # Pages

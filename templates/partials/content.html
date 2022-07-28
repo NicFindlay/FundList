@@ -156,6 +156,9 @@
                                 <table class="table align-middle table-nowrap">
                                     <tbody>
                                         <tr>
+
+                                            {% if fund_list %}
+
                                             <td style="width: 90px;">
                                                 <div class="avatar-lg me-4">
                                                     <img src="{% static 'images/funds/allan-gray.svg'%}"
@@ -164,8 +167,9 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <h5 class="font-size-15"><a href="" class="text-dark">Allan Gray
-                                                            Balanced Fund</a></h5>
+                                                    <h5 class="font-size-15"><a href="" class="text-dark"> {{
+                                                            fund_list.name
+                                                            }} </a></h5>
                                                 </div>
                                             </td>
                                             <td>
@@ -201,6 +205,8 @@
                                                     <span class="text-muted mt-1">145 Sales</span>
                                                 </div>
                                             </td>
+
+                                            {% endif %}
                                         </tr>
 
                                         <tr>
