@@ -7,27 +7,33 @@ from django.utils import timezone
 
 
 class Company(models.Model):
-    name = models.CharField(max_length=250, primary_key=True, unique=True)  # PK
+    name = models.CharField(max_length=250)  # PK
     logo = models.URLField(blank=True)
-    marketcap = models.CharField(max_length=250)
+    website = models.URLField(blank=True)
+
+    funds_managed = models.ManyToManyField("Fund", verbose_name="List of funds")
 
     def __str__(self):
         return self.name
 
 
 class Fund(models.Model):
-    id = models.AutoField(primary_key=True, default=43)  # PK
-    company_id = models.ManyToManyField(Company, blank=True)  # FK
+    company_link = models.ForeignKey(Company, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
+
+    factsheet = models.URLField(blank=True)
+
+    pricing_data = models.ManyToManyField("PriceData", verbose_name="Pricing Data")
 
     def __str__(self):
         return self.name
 
 
 class PriceData(models.Model):
-    id = models.AutoField(primary_key=True, default=22)  # PK
-    fund_id = models.ForeignKey(Fund, on_delete=models.CASCADE)
-
+    fund_link = models.ForeignKey(Fund, on_delete=models.CASCADE)
     date = models.DateTimeField(default=timezone.now)
     price = models.BigIntegerField()
-    marketcap = models.CharField(max_length=250)
+    marketcap = models.BigIntegerField()
+
+    def __str__(self):
+        return str(self.date)
