@@ -1,7 +1,7 @@
 {% extends "partials/base.html" %}
 {% load static %}
 
-{% block title %}Starter Page{% endblock title %}
+{% block title %}Dashboard{% endblock title %}
 
 
 {% block extra_css %}
@@ -11,8 +11,12 @@
 {% endblock extra_css %}
 
 
-
 {% block content %}
+
+<br><br><br><br>
+{% for fund in fund_list %}
+{{ fund }}
+{% endfor %}
 {% include "partials/content.html" with title='Dashboard' pageview='Dashboard' %}
 {% endblock content %}
 

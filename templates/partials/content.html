@@ -5,6 +5,7 @@
 <!-- ============================================================== -->
 <div class="main-content">
 
+
     <div class="page-content">
         <div class="container-fluid">
             <!-- start page title -->
@@ -157,8 +158,6 @@
                                     <tbody>
                                         <tr>
 
-                                            {% if fund_list %}
-
                                             <td style="width: 90px;">
                                                 <div class="avatar-lg me-4">
                                                     <img src="{% static 'images/funds/allan-gray.svg'%}"
@@ -167,9 +166,7 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <h5 class="font-size-15"><a href="" class="text-dark"> {{
-                                                            fund_list.name
-                                                            }} </a></h5>
+                                                    <h5 class="font-size-15"><a href="" class="text-dark"> </a></h5>
                                                 </div>
                                             </td>
                                             <td>
@@ -206,7 +203,7 @@
                                                 </div>
                                             </td>
 
-                                            {% endif %}
+
                                         </tr>
 
                                         <tr>
