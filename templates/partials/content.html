@@ -14,6 +14,7 @@
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                         <h2 class="mb-sm-0 font-size-26">Today's Unit Trust Performance</h2>
 
+
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">{{pageview}}</a></li>
@@ -156,8 +157,8 @@
                             <div class="table-responsive px-3" data-simplebar style="max-height: 395px;">
                                 <table class="table align-middle table-nowrap">
                                     <tbody>
+                                        {% for fund in fund_list %}
                                         <tr>
-
                                             <td style="width: 90px;">
                                                 <div class="avatar-lg me-4">
                                                     <img src="{% static 'images/funds/allan-gray.svg'%}"
@@ -166,7 +167,10 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <h5 class="font-size-15"><a href="" class="text-dark"> </a></h5>
+                                                    <h5 class="font-size-15"><a href=""
+                                                            class="text-dark">{{fund.company_link}} {{fund}}
+                                                        </a></h5>
+
                                                 </div>
                                             </td>
                                             <td>
@@ -205,6 +209,7 @@
 
 
                                         </tr>
+                                        {% endfor %}
 
                                         <tr>
                                             <td style="width: 90px;">
