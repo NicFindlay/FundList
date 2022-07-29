@@ -1,1 +1,12 @@
 /** My Custom CSS Changes **/
+
+.company-title {
+    color: var(--bs-body-color);
+    font-weight: 500;
+}
+
+.logo-image-frame {
+    height: 25px;
+    width: 70px;
+    margin: 1.5em 0;
+}
