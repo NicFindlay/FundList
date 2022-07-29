@@ -10,10 +10,10 @@
 `gulp`  						
 -> 	Runs the project locally, starts the development server and watches for any changes in your code, including your HTML, javascript, sass, etc. The development server is accessible at http://localhost:8000.
 
-`python -m venv environment_name`  		
+`python -m venv fundlist`  		
 -> Create Virtual Environment on linux & mac OS
 
-`csource environment_name/bin/activate	`  
+`source fundlist/bin/activate`    
 -> Activate Environment on Linux & mac OS
 
 `pip3 install django`	__				
@@ -52,11 +52,15 @@ DATABASES = {
     }  
 }  
 
-### To Create superuser 
+### To create superuser 
 
 python3 manage.py createsuperuser  
 python3 manage.py migrate  
 
+### Database Changes
+Change your models (in models.py).
+Run `python manage.py makemigrations` to create migrations for those changes
+Run `python manage.py migrate` to apply those changes to the database.
 
 ### To load Static Files:
 
