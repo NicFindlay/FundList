@@ -8,7 +8,7 @@ from django.utils import timezone
 
 class Company(models.Model):
     name = models.CharField(max_length=250)  # PK
-    logo = models.URLField(blank=True)
+    logo = models.FileField(upload_to="static/images/funds/")
     website = models.URLField(blank=True)
 
     funds_managed = models.ManyToManyField("Fund", verbose_name="List of funds")
