@@ -10,3 +10,8 @@
     width: 70px;
     margin: 1.5em 0;
 }
+
+.no-border td {
+    border-bottom-width: 0px;
+    padding: 0.4rem 0.4rem;
+}

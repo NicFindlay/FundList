@@ -1,8 +1,6 @@
 {% load static %}
 {% block content %}
-<!-- ============================================================== -->
-<!-- Start right Content here -->
-<!-- ============================================================== -->
+
 <div class="main-content">
 
 
@@ -36,13 +34,17 @@
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1">
                                     <h4 class="card-title">Top Gainers</h4>
+                                    <span class="card-subtitle text-muted">this
+                                        month</span>
                                     <table class="table align-middle table-nowrap">
                                         <tbody>
-                                            <tr>
+                                            {% for fund in fund_list %}
+                                            <tr class="no-border">
                                                 <td>
                                                     <div>
-                                                        <h5 class="font-size-13"><a href="" class="text-dark">Allan Gray
-                                                                Balanced</a></h5>
+                                                        <h5 class="font-size-13"><a href=""
+                                                                class="text-dark">{{fund.company_link}} {{fund}}</a>
+                                                        </h5>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -51,33 +53,8 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    <div>
-                                                        <h5 class="font-size-13"><a href="" class="text-dark">Investec
-                                                                Equity</a></h5>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="text-nowrap">
-                                                        <span class="badge bg-soft-success text-success">+8%</span>
+                                            {% endfor %}
 
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div>
-                                                        <h5 class="font-size-13"><a href="" class="text-dark">Allan Gray
-                                                                Balanced</a></h5>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="text-nowrap">
-                                                        <span class="badge bg-soft-success text-success">+8%</span>
-                                                    </div>
-                                                </td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -93,19 +70,30 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1">
-                                    <h4 class="card-title">Trending Higher</h4>
-                                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Items</span>
-                                    <h4 class="mb-3">
-                                        <span class="counter-value" data-target="1256">0</span>
-                                    </h4>
-                                    <div class="text-nowrap">
-                                        <span class="badge bg-soft-danger text-danger">-29 Trades</span>
-                                        <span class="ms-1 text-muted font-size-13">Since last week</span>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0 text-end dash-widget">
-                                    <div id="mini-chart2" data-colors='["#1c84ee", "#33c38e"]' class="apex-charts">
-                                    </div>
+                                    <h4 class="card-title">Biggest Losers</h4>
+                                    <span class="card-subtitle text-muted">this
+                                        month</span>
+                                    <table class="table align-middle table-nowrap">
+                                        <tbody>
+                                            {% for fund in fund_list %}
+                                            <tr class="no-border">
+                                                <td>
+                                                    <div>
+                                                        <h5 class="font-size-13"><a href=""
+                                                                class="text-dark">{{fund.company_link}} {{fund}}</a>
+                                                        </h5>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-nowrap">
+                                                        <span class="badge bg-soft-danger text-danger">+8%</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div><!-- end card body -->
@@ -119,19 +107,30 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1">
-                                    <h4 class="card-title">Biggest Losers</h4>
-                                    <span class="text-muted mb-3 lh-1 d-block text-truncate">Average Sales</span>
-                                    <h4 class="mb-3">
-                                        $<span class="counter-value" data-target="7.54">0</span>M
-                                    </h4>
-                                    <div class="text-nowrap">
-                                        <span class="badge bg-soft-success text-success">+ $2.8k</span>
-                                        <span class="ms-1 text-muted font-size-13">Since last week</span>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0 text-end dash-widget">
-                                    <div id="mini-chart3" data-colors='["#1c84ee", "#33c38e"]' class="apex-charts">
-                                    </div>
+                                    <h4 class="card-title">Hot Picks</h4>
+                                    <span class="card-subtitle text-muted">this
+                                        month</span>
+                                    <table class="table align-middle table-nowrap">
+                                        <tbody>
+                                            {% for fund in fund_list %}
+                                            <tr class="no-border">
+                                                <td>
+                                                    <div>
+                                                        <h5 class="font-size-13"><a href=""
+                                                                class="text-dark">{{fund.company_link}} {{fund}}</a>
+                                                        </h5>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-nowrap">
+                                                        <span class="badge bg-soft-success text-success">+8%</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div><!-- end card body -->

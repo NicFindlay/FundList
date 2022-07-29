@@ -5736,12 +5736,15 @@ fieldset:disabled .btn {
 }
 
 .card-title {
-  margin-bottom: 1rem;
+  font-size: 17px;
+  margin-bottom: 1.4rem;
+  display: inline-block;
 }
 
 .card-subtitle {
-  margin-top: -0.25rem;
-  margin-bottom: 0;
+  font-size: 11px;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .card-text:last-child {
@@ -15378,9 +15381,6 @@ body[data-layout-mode=dark] .breadcrumb-item.active {
   color: #495057;
 }
 
-.card-title {
-  font-size: 16px;
-}
 
 .card-title-desc {
   color: #74788d;
