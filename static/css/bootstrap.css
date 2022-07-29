@@ -15373,7 +15373,7 @@ body[data-layout-mode=dark] .breadcrumb-item.active {
   margin-bottom: 24px;
   -webkit-box-shadow: 0.2rem 0.2rem 1.5rem rgba(18, 38, 63, 0.04);
   box-shadow: 0.2rem 0.2rem 1.5rem rgba(18, 38, 63, 0.04);
-  border: 2px solid #f6f6f6 !important;
+  border: 2px solid rgba(18, 38, 63, 0.04) !important;
   border-radius: 12px;
 }
 

@@ -1,9 +1,5 @@
 /** My Custom CSS Changes **/
 
-.company-title {
-    color: var(--bs-body-color);
-    font-weight: 500;
-}
 
 .logo-image-frame {
     height: 25px;
@@ -14,4 +10,8 @@
 .no-border td {
     border-bottom-width: 0px;
     padding: 0.4rem 0.4rem;
+}
+
+.right-align {
+    text-align: right;
 }
