@@ -799,7 +799,7 @@ body[data-sidebar-size=sm] .main-content {
 }
 
 body[data-sidebar-size=sm] .navbar-brand-box {
-  width: 70px !important;
+  width: 160px !important;
 }
 
 body[data-sidebar-size=sm] .logo span.logo-lg {
