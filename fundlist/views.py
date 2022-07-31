@@ -16,7 +16,9 @@ def get_dashboard(request):
 
 
 def get_apex(request):
-    return render(request, "components/charts/charts-apex.html")
+    return render(request, "components/charts/charts-sparkline.html")
+
+
 
 
 class Settings(LoginRequiredMixin, View):
