@@ -27,8 +27,8 @@ $(document).ready(function () {
         var sparkline4ChartColors = getChartColorsArray("#sparkline4");
         $("#sparkline4").sparkline([0, 23, 43, 35, 44, 45, 56, 37, 40, 45, 56, 7, 10], {
             type: 'line',
-            width: '100%',
-            height: '40',
+            width: '160',
+            height: '30',
             lineColor: sparkline4ChartColors,
             fillColor: 'transparent',
             spotColor: 'transparent',
