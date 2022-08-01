@@ -21,10 +21,16 @@ class Fund(models.Model):
     company_link = models.ForeignKey(Company, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
     factsheet = models.URLField(blank=True)
-    pricing_data = models.ManyToManyField("PriceData", verbose_name="Pricing Data")
+    # pricing_data = models.ManyToManyField("PriceData", verbose_name="Pricing Data")
+    price = models.FloatField(blank=True)
+    shares = models.FloatField(blank=True)
+    market_cap = models.FloatField(blank=True)
+    one_month = models.FloatField(blank=True)
+    six_month = models.FloatField(blank=True)
+    one_year = models.FloatField(blank=True)
 
     def __str__(self):
-        return str(self.company_link) + ", " + self.name
+        return self.name
 
 
 class PriceData(models.Model):
@@ -35,10 +41,4 @@ class PriceData(models.Model):
     shares = models.FloatField(blank=True)
 
     def __str__(self):
-        return (
-            str(self.fund_link.company_link)
-            + ", "
-            + str(self.fund_link)
-            + ", "
-            + str(self.date)
-        )
+        return str(self.fund_link) + ", " + str(self.date)
