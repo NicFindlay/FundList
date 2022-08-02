@@ -1,9 +1,16 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+import csv
+import PyPDF2
+import urllib.request
+import PyPDF2
+import io
+
+all_data = {}
 
 
-def main():
+def get_factsheets():
 
     chromedriver = "/Users/nic/Documents/Django/FundList.co.za/chromedriver"
     option = webdriver.ChromeOptions()
@@ -14,42 +21,36 @@ def main():
     driver = webdriver.Chrome(service=s, options=option)
     driver.get("https://www.bcis.co.za/boutique-collective-investments/funds/funds")
 
-    all_data = {}
     factsheet = driver.find_elements(By.TAG_NAME, "a")
     for doc in factsheet:
         text = doc.get_attribute("innerHTML")
         href = doc.get_attribute("href")
-        all_data[text] = href
+        if "https://www.bcis.co.za/upload/factsheet_categories_folders/" in str(href):
+            all_data[text] = href
 
-    print(all_data)
+    with open("bci_factsheets.csv", "w") as f:
+        for key in all_data.keys():
+            f.write("%s,%s\n" % (key, all_data[key]))
 
-    # links = []
-    # factsheet = driver.find_elements(By.TAG_NAME, "tr")
-    # for doc in factsheet:
-    #     col = driver.find_elements(By.TAG_NAME, "td")
-    #     for i in range(len(col)):
-    #         print(col[i].text)
 
-    # tables = driver.find_elements(By.XPATH, "//table/tbody/tr/td")
-    # for row in tables:
-    #     print(row[0])
+def extract_factsheets():
+    # print(all_data)
+    # link = all_data["BCI Best Blend Balanced Fund (C) BBBCF"]
+    # print(link)
 
-    # table = driver.find_element(By.TAG_NAME, "table")
-    # rows = table.find_elements(By.TAG_NAME, "tr")
-    # for row in rows:
-    #     if row.find_elements(By.TAG_NAME, "td") == []:
-    #         continue
-    #     else:
-    #         print(row.find_elements(By.TAG_NAME, "td"))[0]
-    #         fund_name = row.find_elements(By.TAG_NAME, "td")[0]
-    #         date = row.find_elements(By.TAG_NAME, "td")[1].get_attribute()
-    #         factsheet_link = row.find_elements(By.TAG_NAME, "td")[4].get_attribute(
-    #             "href"
-    #         )
-    #         print(fund_name)
-    #         print(date)
-    #         print(factsheet_link)
+    URL = "https://www.bcis.co.za/upload/factsheet_categories_folders/funds/02%20-%20Boutique%20Collective%20Investments/BCI%20Best%20Blend%20Balanced%20Fund%20(C)%20BBBCF.pdf"
+    req = urllib.request.Request(URL, headers={"User-Agent": "Magic Browser"})
+    remote_file = urllib.request.urlopen(req).read()
+    remote_file_bytes = io.BytesIO(remote_file)
+    pdfdoc_remote = PyPDF2.PdfFileReader(remote_file_bytes)
+
+    # printing number of pages in pdf file
+    print(pdfdoc_remote.numPages)
+
+    # extracting text from page
+    print(pdfdoc_remote.getPage(0).extractText())
 
 
 if __name__ == "__main__":
-    main()
+    # get_factsheets()
+    extract_factsheets()
