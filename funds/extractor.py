@@ -7,6 +7,7 @@ import urllib.request
 import PyPDF2
 import io
 
+
 all_data = {}
 
 
@@ -38,14 +39,11 @@ def extract_factsheets():
     # link = all_data["BCI Best Blend Balanced Fund (C) BBBCF"]
     # print(link)
 
-    URL = "https://www.bcis.co.za/upload/factsheet_categories_folders/funds/02%20-%20Boutique%20Collective%20Investments/BCI%20Best%20Blend%20Balanced%20Fund%20(C)%20BBBCF.pdf"
+    URL = "https://www.bcis.co.za/upload/factsheet_categories_folders/funds/Harvard%20House%20Investment%20Management/Harvard%20House%20BCI%20Equity%20Fund%20(A)%20MHGE.pdf"
     req = urllib.request.Request(URL, headers={"User-Agent": "Magic Browser"})
     remote_file = urllib.request.urlopen(req).read()
     remote_file_bytes = io.BytesIO(remote_file)
     pdfdoc_remote = PyPDF2.PdfFileReader(remote_file_bytes)
-
-    # printing number of pages in pdf file
-    print(pdfdoc_remote.numPages)
 
     # extracting text from page
     print(pdfdoc_remote.getPage(0).extractText())
