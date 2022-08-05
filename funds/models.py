@@ -20,7 +20,7 @@ class Company(models.Model):
 class Fund(models.Model):
     company_link = models.ForeignKey(Company, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
-    factsheet = models.URLField(blank=True)
+    # factsheet = models.URLField(blank=True)
     # pricing_data = models.ManyToManyField("PriceData", verbose_name="Pricing Data")
     price = models.FloatField(blank=True)
     shares = models.FloatField(blank=True)
