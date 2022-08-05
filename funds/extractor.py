@@ -6,6 +6,8 @@ import PyPDF2
 import urllib.request
 import PyPDF2
 import io
+import pdfplumber
+import re
 
 
 all_data = {}
@@ -35,18 +37,24 @@ def get_factsheets():
 
 
 def extract_factsheets():
-    # print(all_data)
-    # link = all_data["BCI Best Blend Balanced Fund (C) BBBCF"]
-    # print(link)
 
-    URL = "https://www.bcis.co.za/upload/factsheet_categories_folders/funds/Harvard%20House%20Investment%20Management/Harvard%20House%20BCI%20Equity%20Fund%20(A)%20MHGE.pdf"
-    req = urllib.request.Request(URL, headers={"User-Agent": "Magic Browser"})
-    remote_file = urllib.request.urlopen(req).read()
-    remote_file_bytes = io.BytesIO(remote_file)
-    pdfdoc_remote = PyPDF2.PdfFileReader(remote_file_bytes)
+    filename = "bci_factsheets.csv"
+    with open(filename, "r") as data:
+        for line in csv.reader(data):
+            print(line[0])
+            URL = line[1]
+            req = urllib.request.Request(URL, headers={"User-Agent": "Magic Browser"})
+            remote_file = urllib.request.urlopen(req).read()
+            remote_file_bytes = io.BytesIO(remote_file)
 
-    # extracting text from page
-    print(pdfdoc_remote.getPage(0).extractText())
+            keywords = ["Portfolio Value: R"]
+
+            with pdfplumber.open(remote_file_bytes) as pdf:
+                pdf_text = pdf.pages[0].extract_text()
+                for keyword in keywords:
+                    before_keyword, text, after_keyword = pdf_text.partition(keyword)
+                    market_cap = (after_keyword.split("\n")[0]).replace(" ", "")
+                    print("Portfolio Value: R" + market_cap)
 
 
 if __name__ == "__main__":
