@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    command: python /FUNDLIST-MASTER/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/FUNDLIST-MASTER
+    ports:
+      - "8000:8000"
+    # depends_on:
+    #   - db
+
+  # db:
+  #   image: postgres:13
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data/
+  #   environment:
+  #     - "POSTGRES_HOST_AUTH_METHOD=trust"
+# volumes:
+#   postgres_data:
+
+# All the greyed out above has to do with your chosen database. It looks like you're using sqlite for now. This means the above is useless
+# for now.
