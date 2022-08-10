@@ -5,7 +5,7 @@ import csv
 import django
 import urllib.request
 import io
-import pdfplumber
+import PyPDF2
 from funds.models import Fund
 
 
@@ -45,6 +45,10 @@ def extract_factsheets():
             req = urllib.request.Request(URL, headers={"User-Agent": "Magic Browser"})
             remote_file = urllib.request.urlopen(req).read()
             remote_file_bytes = io.BytesIO(remote_file)
+            try:
+                pdfdoc_remote = PyPDF2.PdfFileReader(remote_file_bytes)
+            except:
+                print("An exception occurred")
 
             keywords = ["Portfolio Value: R", "NAV Price as at month end:"]
             name = line[0]
@@ -54,22 +58,19 @@ def extract_factsheets():
             shares = ""
             date = "30/06/2022"
 
-            with pdfplumber.open(remote_file_bytes) as pdf:
-                pdf_text = pdf.pages[0].extract_text()
-                before_keyword, text, after_keyword = pdf_text.partition(keywords[0])
-                market_cap = (after_keyword.split("\n")[0]).replace(" ", "")
+            pdf_text = pdfdoc_remote.pages[0].extract_text()
+            before_keyword, text, after_keyword = pdf_text.partition(keywords[0])
+            market_cap = (after_keyword.split("\n")[0]).replace(" ", "")
 
-                before_keyword, text, after_keyword = pdf_text.partition(keywords[1])
-                price = (
-                    (after_keyword.split("\n")[0])
-                    .replace(" ", "")
-                    .removesuffix("cents")
-                )
+            before_keyword, text, after_keyword = pdf_text.partition(keywords[1])
+            price = (
+                (after_keyword.split("\n")[0]).replace(" ", "").removesuffix("cents")
+            )
 
-                print("Portfolio Value: R" + market_cap)
-                print("Unit Price: " + price)
+            print("Portfolio Value: R" + market_cap)
+            print("Unit Price: " + price)
 
-            insert_fund("Allan Gray Balanced Fund", price, shares, market_cap, date)
+            # insert_fund("Allan Gray Balanced Fund", price, shares, market_cap, date)
 
 
 # Calculate fund returns from Pricing and send to Fund DB

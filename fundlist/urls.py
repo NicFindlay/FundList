@@ -45,4 +45,5 @@ urlpatterns = [
     # # Include the allauth and 2FA urls from their respective packages.
     path("/", include("allauth_2fa.urls")),
     path("account/", include("allauth.urls")),
+    path("run_extraction/", fundlist_views.run_extraction, name="run_extraction"),
 ]

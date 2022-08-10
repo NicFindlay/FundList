@@ -18,6 +18,9 @@ def get_funds(request):
     return render(request, "dashboard.html", context)
 
 
+
+
+
 # Calculate fund returns from Pricing and send to Fund DB
 def calculate_returns(fund_list, price_list):
     for fund in fund_list:

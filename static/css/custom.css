@@ -15,3 +15,8 @@
 .right-align {
     text-align: right;
 }
+
+.btn {
+    background-color: #1D84ED !Important;
+    color: #fff;
+}
