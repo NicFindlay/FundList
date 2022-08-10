@@ -8,7 +8,7 @@ def get_funds(request):
     fund_list = Fund.objects.order_by("id")
     company_list = Company.objects.order_by("id")
     price_list = PriceData.objects.order_by("-date")
-    calculate_returns(fund_list, price_list)
+    # calculate_returns(fund_list, price_list)
     context = {
         "fund_list": fund_list,
         "company_list": company_list,
@@ -16,9 +16,6 @@ def get_funds(request):
     }
 
     return render(request, "dashboard.html", context)
-
-
-
 
 
 # Calculate fund returns from Pricing and send to Fund DB

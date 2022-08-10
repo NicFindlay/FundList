@@ -37,12 +37,12 @@
                                         month</span>
                                     <table class="table align-middle table-nowrap">
                                         <tbody>
-                                            {% for fund in fund_list %}
+                                            {% for fund in fund_list|slice:":3" %}
                                             <tr class="no-border">
                                                 <td>
                                                     <div>
                                                         <h5 class="font-size-13"><a href=""
-                                                                class="text-dark">{{fund.company_link}} {{fund}}</a>
+                                                                class="text-dark">{{fund}}</a>
                                                         </h5>
                                                     </div>
                                                 </td>
@@ -74,12 +74,12 @@
                                         month</span>
                                     <table class="table align-middle table-nowrap">
                                         <tbody>
-                                            {% for fund in fund_list %}
+                                            {% for fund in fund_list|slice:":3" %}
                                             <tr class="no-border">
                                                 <td>
                                                     <div>
                                                         <h5 class="font-size-13"><a href=""
-                                                                class="text-dark">{{fund.company_link}} {{fund}}</a>
+                                                                class="text-dark">{{fund}}</a>
                                                         </h5>
                                                     </div>
                                                 </td>
@@ -111,12 +111,12 @@
                                         month</span>
                                     <table class="table align-middle table-nowrap">
                                         <tbody>
-                                            {% for fund in fund_list %}
+                                            {% for fund in fund_list|slice:":3" %}
                                             <tr class="no-border">
                                                 <td>
                                                     <div>
                                                         <h5 class="font-size-13"><a href=""
-                                                                class="text-dark">{{fund.company_link}} {{fund}}</a>
+                                                                class="text-dark">{{fund}}</a>
                                                         </h5>
                                                     </div>
                                                 </td>
@@ -143,7 +143,7 @@
                     <div class="card">
                         <!-- card body -->
                         <div class="card-body px-0 pt-2">
-                            <div class="table-responsive px-3" data-simplebar style="max-height: 395px;">
+                            <div class="table-responsive px-3" data-simplebar>
                                 <table class="table align-middle table-nowrap">
                                     <tbody>
                                         <tr>
@@ -176,7 +176,7 @@
                                             </th>
                                         </tr>
 
-                                        {% for fund in fund_list %}
+                                        {% for fund in fund_list|slice:":100" %}
                                         <tr>
                                             <td style="width: 10%;">
                                                 <div class="logo-image-frame">
