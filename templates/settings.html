@@ -167,7 +167,6 @@
                             </div>
                             <hr>
 
-                            <a class="button" href="{% url 'account_change_password' %}">Run</a>
                             <form action="{% url 'run_extraction'%}" method="POST"> {% csrf_token %} <button
                                     type="submit" class="btn">Run Extraction</button> </form>
 

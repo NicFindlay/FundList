@@ -40,7 +40,7 @@ def extract_factsheets():
     filename = "bci_factsheets.csv"
     with open(filename, "r") as data:
         for line in csv.reader(data):
-            print(line[0])
+            print("Adding fund " + line[0])
             URL = line[1]
             req = urllib.request.Request(URL, headers={"User-Agent": "Magic Browser"})
             remote_file = urllib.request.urlopen(req).read()
@@ -55,7 +55,7 @@ def extract_factsheets():
             factsheet = line[1]
             market_cap = ""
             price = ""
-            date = "30/06/2022"
+            date = "2022-06-30"
 
             pdf_text = pdfdoc_remote.pages[0].extract_text()
             before_keyword, text, after_keyword = pdf_text.partition(keywords[0])
@@ -67,36 +67,39 @@ def extract_factsheets():
             )
             price = price.replace(",", "")
 
-            print("Portfolio Value: R" + market_cap)
-            print("Unit Price: " + price)
+            # print("Portfolio Value: R" + market_cap)
+            # print("Unit Price: " + price)
 
-            insert_fund(name, price, market_cap)
+            if not Fund.objects.filter(name=line[0]):
+                insert_fund(name)
+            if market_cap != "":
+                insert_price_data(name, price, market_cap, date)
 
 
 # Calculate fund returns from Pricing and send to Fund DB
 def insert_fund(fund_name):
-    if Fund.objects.filter(name=fund_name):
-        print("EXISTS")
-        exit
-    else:
-        try:
-            new_fund = Fund.objects.create(name=fund_name)
-            new_fund.save()
-        except:
-            print("An exception occurred trying to add Fund")
+    try:
+        new_fund = Fund.objects.create(name=fund_name)
+        new_fund.save()
+    except:
+        print("An exception occurred trying to add Fund")
 
 
-def insert_price_data(fund_name, fund_price, fund_market_cap):
-    if Fund.objects.filter(name=fund_name):
-        exit
-    else:
-        try:
-            new_fund = Fund.objects.create(
-                name=fund_name, price=fund_price, market_cap=fund_market_cap
+def insert_price_data(_name, _price, _market_cap, _date):
+
+    fund = Fund.objects.filter(name=_name)
+
+    if fund[0]:
+        price = PriceData.objects.filter(date=_date, fund_link=fund[0].id)
+        if not price:
+            new_price_data = PriceData.objects.create(
+                fund_link=fund[0],
+                price=_price,
+                market_cap=_market_cap,
+                date=_date,
             )
-            new_fund.save()
-        except:
-            print("An exception occurred trying to add Fund")
+            new_price_data.save()
+            print("Price SAVED")
 
 
 if __name__ == "__main__":

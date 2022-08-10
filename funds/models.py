@@ -36,9 +36,10 @@ class Fund(models.Model):
 class PriceData(models.Model):
     fund_link = models.ForeignKey(Fund, on_delete=models.CASCADE)
     date = models.DateField()
-    factsheet = models.URLField(blank=True)
-    price = models.FloatField(blank=True)
-    shares = models.FloatField(blank=True)
+    factsheet = models.URLField(blank=True, null=True)
+    price = models.FloatField(blank=True, null=True)
+    shares = models.FloatField(blank=True, null=True)
+    market_cap = models.FloatField(blank=True, null=True)
 
     def __str__(self):
         return str(self.fund_link) + ", " + str(self.date)

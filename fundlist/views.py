@@ -43,3 +43,6 @@ class MyPasswordSetView(LoginRequiredMixin, PasswordSetView):
 def run_extraction(request):
     # get_factsheets()
     extract_factsheets()
+    return request
+
+
