@@ -30,7 +30,7 @@ def get_factsheets():
         if "https://www.bcis.co.za/upload/factsheet_categories_folders/" in str(href):
             all_data[text] = href
 
-    with open("bci_factsheets.csv", "w") as f:
+    with open("bci_factsheets2.csv", "w") as f:
         for key in all_data.keys():
             f.write("%s,%s\n" % (key, all_data[key]))
 
@@ -40,7 +40,6 @@ def extract_factsheets():
     filename = "bci_factsheets.csv"
     with open(filename, "r") as data:
         for line in csv.reader(data):
-            print("Adding fund " + line[0])
             URL = line[1]
             req = urllib.request.Request(URL, headers={"User-Agent": "Magic Browser"})
             remote_file = urllib.request.urlopen(req).read()
@@ -55,7 +54,7 @@ def extract_factsheets():
             factsheet = line[1]
             market_cap = ""
             price = ""
-            date = "2022-06-30"
+            date = "2022-07-31"
 
             pdf_text = pdfdoc_remote.pages[0].extract_text()
             before_keyword, text, after_keyword = pdf_text.partition(keywords[0])
@@ -71,8 +70,10 @@ def extract_factsheets():
             # print("Unit Price: " + price)
 
             if not Fund.objects.filter(name=line[0]):
+                print("Adding fund " + line[0])
                 insert_fund(name)
             if market_cap != "":
+                print("Adding price for " + line[0])
                 insert_price_data(name, price, market_cap, date)
 
 

@@ -5,6 +5,8 @@ from django.urls import reverse_lazy
 from allauth.account.views import PasswordSetView, PasswordChangeView
 from django_otp.plugins.otp_totp.models import TOTPDevice
 from fundlist.extractor import get_factsheets, extract_factsheets
+from fundlist.helpful_scripts import calculate
+
 
 # Dashboard
 class DashboardView(LoginRequiredMixin, View):
@@ -46,3 +48,6 @@ def run_extraction(request):
     return request
 
 
+def calculate_returns(request):
+    calculate()
+    return request

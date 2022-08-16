@@ -46,4 +46,7 @@ urlpatterns = [
     path("/", include("allauth_2fa.urls")),
     path("account/", include("allauth.urls")),
     path("run_extraction/", fundlist_views.run_extraction, name="run_extraction"),
+    path(
+        "calculate_returns/", fundlist_views.calculate_returns, name="calculate_returns"
+    ),
 ]

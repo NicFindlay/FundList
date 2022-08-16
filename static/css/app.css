@@ -1413,7 +1413,7 @@ body[data-layout-mode=dark][data-sidebar=light] .sidebar-alert .alertcard-title 
 
   body[data-layout=horizontal] .container-fluid,
   body[data-layout=horizontal] .navbar-header {
-    max-width: 85%;
+    max-width: 90%;
   }
 }
 
