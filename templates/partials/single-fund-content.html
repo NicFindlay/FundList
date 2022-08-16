@@ -1,0 +1,129 @@
+{% load static %}
+{% block content %}
+{% load humanize %}
+
+<div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h2 class="mb-sm-0 font-size-26">{{fund.name}}</h2>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">{{pageview}}</a></li>
+                                <li class="breadcrumb-item active">{{title}}</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <!-- card -->
+                    <div class="card">
+                        <!-- card body -->
+                        <div class="card-body px-0 pt-2">
+                            <div class="table-responsive px-3" data-simplebar>
+                                <table class="table align-middle table-nowrap">
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <p class="mb-1"><a href="" class="text-dark">#</a></p>
+                                            </th>
+                                            <th>
+                                                <p class="mb-1"><a href="" class="text-dark ">Fund Name</a></p>
+                                            </th>
+                                            <th>
+                                                <p class="mb-1 right-align"><a href="" class="text-dark">Price</a></p>
+                                            </th>
+                                            <th>
+                                                <p class="mb-1 right-align"><a href="" class="text-dark">1m</a></p>
+                                                </td>
+                                            <th>
+                                                <p class="mb-1 right-align"><a href="" class="text-dark">6m</a></p>
+                                                </td>
+                                            <th>
+                                                <p class="mb-1 right-align"><a href="" class="text-dark">1y</a></p>
+                                                </td>
+                                            <th>
+                                                <p class="mb-1 right-align"><a href="" class="text-dark">Market Cap</a>
+                                                </p>
+                                            </th>
+                                            <th>
+                                                <div class="text-end">
+                                                    <p class="mb-1"><a href="" class="text-dark">Last Year</a></p>
+                                                </div>
+                                            </th>
+                                        </tr>
+
+                                        {% for fund in fund_list %}
+                                        <tr>
+                                            <td style="width: 10%;">
+                                                <div class="logo-image-frame">
+                                                    <img src="{{fund.company_link.logo.url}}" class="img-fluid" alt="">
+                                                </div>
+                                            </td>
+                                            <td style="width: 35%; overflow: hidden">
+                                                <div>
+                                                    <h5 class="font-size-15" style="max-width: 400px;"><a
+                                                            class="text-dark" href="">{{fund}}
+                                                        </a></h5>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class=" right-align">R{{fund.price}}</span>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="badge-big text-success right-align">{{fund.one_month}}%</span>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="badge-big text-success right-align">{{fund.six_month}}%</span>
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="badge-big text-success right-align">{{fund.one_year}}%</span>
+                                            </td>
+                                            <td>
+                                                <span class=" right-align">R{{fund.market_cap | intword}}</span>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <div id="sparkline4" data-colors='["#F48B00"]'></div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- end card body -->
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+
+            </div><!-- end row -->
+        </div>
+        <!-- container-fluid -->
+
+    </div>
+    <!-- End Page-content -->
+
+
+    {% block footer %}
+    {% include 'partials/footer.html'%}
+    {% endblock footer %}
+</div>
+<!-- end main content-->
+
+{% endblock content %}

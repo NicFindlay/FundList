@@ -21,8 +21,8 @@ from fundlist import views as fundlist_views
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-    # path("", fundlist_views.get_dashboard),
     path("", fund_views.get_funds),
+    path("fund/<str:fund>/", fund_views.get_single_fund, name="fund"),
     path("admin/", admin.site.urls),
     path("apex/", fundlist_views.get_apex),
     # # Dashboard

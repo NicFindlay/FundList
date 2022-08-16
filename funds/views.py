@@ -16,3 +16,14 @@ def get_funds(request):
     }
 
     return render(request, "dashboard.html", context)
+
+
+def get_single_fund(request, fund):
+    fund = fund.replace("-", " ")
+    fund_object = Fund.objects.get(name=fund)
+
+    # calculate_returns(fund_list, price_list)
+    context = {
+        "fund": fund_object,
+    }
+    return render(request, "single-fund.html", context)

@@ -1,6 +1,7 @@
 {% load static %}
 {% block content %}
 {% load humanize %}
+{% load fund_tags %}
 
 <div class="main-content">
 
@@ -183,9 +184,11 @@
                                                     <img src="{{fund.company_link.logo.url}}" class="img-fluid" alt="">
                                                 </div>
                                             </td>
-                                            <td style="width: 35%;">
+                                            <td style="width: 35%; overflow: hidden">
                                                 <div>
-                                                    <h5 class="font-size-15 "><a class="text-dark" href="">{{fund}}
+                                                    <h5 class="font-size-15" style="max-width: 400px;"><a
+                                                            class="text-dark"
+                                                            href="fund/{{fund.name|clean_slug}}">{{fund}}
                                                         </a></h5>
                                                 </div>
                                             </td>
