@@ -188,7 +188,7 @@
                                                 <div>
                                                     <h5 class="font-size-15" style="max-width: 400px;"><a
                                                             class="text-dark"
-                                                            href="fund/{{fund.name|clean_slug}}">{{fund}}
+                                                            href="{% url 'single_fund' fund.name|clean_slug %}">{{fund}}
                                                         </a></h5>
                                                 </div>
                                             </td>

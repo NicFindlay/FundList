@@ -27,3 +27,13 @@ def get_single_fund(request, fund):
         "fund": fund_object,
     }
     return render(request, "single-fund.html", context)
+
+
+def search_funds(request):
+    if request.method == "POST":
+        searched = request.POST["searched"]
+        funds = Fund.objects.filter(name__contains=searched)
+
+        return render(request, "search.html", {"searched": searched, "funds": funds})
+    else:
+        return render(request, "search.html")

@@ -22,7 +22,7 @@ from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
     path("", fund_views.get_funds),
-    path("fund/<str:fund>/", fund_views.get_single_fund, name="fund"),
+    path("fund/<str:fund>/", fund_views.get_single_fund, name="single_fund"),
     path("admin/", admin.site.urls),
     path("apex/", fundlist_views.get_apex),
     # # Dashboard
@@ -49,4 +49,5 @@ urlpatterns = [
     path(
         "calculate_returns/", fundlist_views.calculate_returns, name="calculate_returns"
     ),
+    path("search/", fund_views.search_funds, name="search_funds"),
 ]
