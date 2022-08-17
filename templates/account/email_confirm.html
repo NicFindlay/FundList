@@ -9,8 +9,11 @@
         <div class="d-flex flex-column h-100">
             <div class="mb-4 mb-md-5 text-center">
                 <a href="{% url 'dashboard' %}" class="d-block auth-logo">
-                    <img src="{% static 'images/logo-sm.svg' %}" alt="" height="28"> <span class="logo-txt">Dason</span>
+                    <img src="{% static 'images/logo-sm.svg' %}" alt="" height="28"> <span class="logo-txt"><span
+                            style="font-weight: 200 !important;">Fund</span>List</span>
+                    </span>
                 </a>
+
             </div>
             <div class="auth-content my-auto">
                 <div class="text-center">
@@ -25,7 +28,8 @@
                         {% user_display confirmation.email_address.user as user_display %}
                         <p class="text-muted">{% blocktrans with confirmation.email_address.email as email %}Please
                             confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user
-                            <strong>{{ user_display }}</strong>.{% endblocktrans %}</p>
+                            <strong>{{ user_display }}</strong>.{% endblocktrans %}
+                        </p>
                         <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
                             {% csrf_token %}
                             <div class="mt-4">
@@ -44,8 +48,8 @@
             </div>
             <div class="mt-4 mt-md-5 text-center">
                 <p class="mb-0">©
-                    <script>document.write(new Date().getFullYear())</script> fundlist . Crafted with <i
-                        class="mdi mdi-heart text-danger"></i> by Themesdesign
+                    <script>document.write(new Date().getFullYear())</script> FundList <i
+                        class="mdi mdi-heart text-danger"></i>
                 </p>
             </div>
         </div>

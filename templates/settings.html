@@ -172,6 +172,17 @@
 
 
                         </div>
+                        <div class="card-body">
+                            <div>
+                                <h5 class="font-size-17">Calculate Returns</h5>
+                            </div>
+                            <hr>
+
+                            <form action="{% url 'calculate_returns'%}" method="POST"> {% csrf_token %} <button
+                                    type="submit" class="btn">Run Calculations</button> </form>
+
+
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
