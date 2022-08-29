@@ -33,79 +33,19 @@
                         <!-- card body -->
                         <div class="card-body px-0 pt-2">
                             <div class="table-responsive px-3" data-simplebar>
-                                <table class="table align-middle table-nowrap">
-                                    <tbody>
-                                        <tr>
-                                            <th>
-                                                <p class="mb-1"><a href="" class="text-dark">#</a></p>
-                                            </th>
-                                            <th>
-                                                <p class="mb-1"><a href="" class="text-dark ">Fund Name</a></p>
-                                            </th>
-                                            <th>
-                                                <p class="mb-1 right-align"><a href="" class="text-dark">Price</a></p>
-                                            </th>
-                                            <th>
-                                                <p class="mb-1 right-align"><a href="" class="text-dark">1m</a></p>
-                                                </td>
-                                            <th>
-                                                <p class="mb-1 right-align"><a href="" class="text-dark">6m</a></p>
-                                                </td>
-                                            <th>
-                                                <p class="mb-1 right-align"><a href="" class="text-dark">1y</a></p>
-                                                </td>
-                                            <th>
-                                                <p class="mb-1 right-align"><a href="" class="text-dark">Market Cap</a>
-                                                </p>
-                                            </th>
-                                            <th>
-                                                <div class="text-end">
-                                                    <p class="mb-1"><a href="" class="text-dark">Last Year</a></p>
-                                                </div>
-                                            </th>
-                                        </tr>
 
-                                        {% for fund in fund_list %}
-                                        <tr>
-                                            <td style="width: 10%;">
-                                                <div class="logo-image-frame">
-                                                    <img src="{{fund.company_link.logo.url}}" class="img-fluid" alt="">
-                                                </div>
-                                            </td>
-                                            <td style="width: 35%; overflow: hidden">
-                                                <div>
-                                                    <h5 class="font-size-15" style="max-width: 400px;"><a
-                                                            class="text-dark" href="">{{fund}}
-                                                        </a></h5>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class=" right-align">R{{fund.price}}</span>
-                                            </td>
-                                            <td>
-                                                <span
-                                                    class="badge-big text-success right-align">{{fund.one_month}}%</span>
-                                            </td>
-                                            <td>
-                                                <span
-                                                    class="badge-big text-success right-align">{{fund.six_month}}%</span>
-                                            </td>
-                                            <td>
-                                                <span
-                                                    class="badge-big text-success right-align">{{fund.one_year}}%</span>
-                                            </td>
-                                            <td>
-                                                <span class=" right-align">R{{fund.market_cap | intword}}</span>
-                                            </td>
-                                            <td style="width: 20%;">
-                                                <div id="sparkline4" data-colors='["#F48B00"]'></div>
-                                            </td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Spline Area</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="chart">
+                                        <div id="timeline-chart"></div>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
+
                         <!-- end card body -->
                     </div>
                     <!-- end card -->
@@ -118,6 +58,7 @@
 
     </div>
     <!-- End Page-content -->
+
 
 
     {% block footer %}

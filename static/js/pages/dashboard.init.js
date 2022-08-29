@@ -109,52 +109,86 @@ chart.render();
 //
 var barchartColors = getChartColorsArray("#market-overview");
 var options = {
-    series: [{
-        name: 'Profit',
-        data: [12.45, 16.2, 8.9, 11.42, 12.6, 18.1, 18.2, 14.16, 11.1, 8.09, 16.34, 12.88]
-    }, {
-        name: 'Loss',
-        data: [-11.45, -15.42, -7.9, -12.42, -12.6, -18.1, -18.2, -14.16, -11.1, -7.09, -15.34, -11.88]
-    }],
     chart: {
-        type: 'bar',
-        height: 400,
-        stacked: true,
+        height: 350,
+        type: 'area',
         toolbar: {
-            show: false
-        },
-    },
-    plotOptions: {
-        bar: {
-            columnWidth: '20%',
-        },
-    },
-    colors: barchartColors,
-    fill: {
-        opacity: 1
+            show: false,
+        }
     },
     dataLabels: {
-        enabled: false,
+        enabled: false
     },
-    legend: {
-        show: false,
+    stroke: {
+        curve: 'smooth',
+        width: 3,
     },
-    yaxis: {
-        labels: {
-            formatter: function (y) {
-                return y.toFixed(0) + "%";
-            }
-        }
-    },
+    series: [{
+
+    }],
+    colors: splneAreaColors,
     xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        labels: {
-            rotate: -90
-        }
+        type: 'datetime',
+        categories: ["2018-09-19T00:00:00", "2018-09-19T01:30:00", "2018-09-19T02:30:00", "2018-09-19T03:30:00", "2018-09-19T04:30:00", "2018-09-19T05:30:00", "2018-09-19T06:30:00"],
+    },
+    grid: {
+        borderColor: '#f1f1f1',
+    },
+    tooltip: {
+        x: {
+            format: 'dd/MM/yy HH:mm'
+        },
     }
-};
+}
 
 var chart = new ApexCharts(document.querySelector("#market-overview"), options);
+chart.render();
+
+
+//   spline_area
+var splneAreaColors = getChartColorsArray("#spline_area");
+var options = {
+    chart: {
+        height: 350,
+        type: 'area',
+        toolbar: {
+            show: false,
+        }
+    },
+    dataLabels: {
+        enabled: false
+    },
+    stroke: {
+        curve: 'smooth',
+        width: 3,
+    },
+    series: [{
+        name: 'series1',
+        data: [34, 40, 28, 52, 42, 109, 100]
+    }, {
+        name: 'series2',
+        data: [32, 60, 34, 46, 34, 52, 41]
+    }],
+    colors: splneAreaColors,
+    xaxis: {
+        type: 'datetime',
+        categories: ["2018-09-19T00:00:00", "2018-09-19T01:30:00", "2018-09-19T02:30:00", "2018-09-19T03:30:00", "2018-09-19T04:30:00", "2018-09-19T05:30:00", "2018-09-19T06:30:00"],
+    },
+    grid: {
+        borderColor: '#f1f1f1',
+    },
+    tooltip: {
+        x: {
+            format: 'dd/MM/yy HH:mm'
+        },
+    }
+}
+
+var chart = new ApexCharts(
+    document.querySelector("#spline_area"),
+    options
+);
+
 chart.render();
 
 // MAp

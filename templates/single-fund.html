@@ -15,10 +15,99 @@
 {% endblock content %}
 
 {% block extra_js %}
-<script src="{% static 'libs/jquery-sparkline/jquery.sparkline.min.js'%}"></script>
-<script src="{% static 'js/pages/sparklines.init.js'%}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+    var options = {
+        chart: {
+            type: "area",
+            height: 300,
+            foreColor: "#999",
+            stacked: true,
+            dropShadow: {
+                enabled: true,
+                enabledSeries: [0],
+                top: -2,
+                left: 2,
+                blur: 5,
+                opacity: 0.06
+            }
+        },
+        colors: ['#0090FF'],
+        stroke: {
+            curve: "smooth",
+            width: 3
+        },
+        dataLabels: {
+            enabled: false
+        },
+        series: [{
+            name: 'Total Views',
+            data: generateDayWiseTimeSeries(0, 18)
+        }],
+        markers: {
+            size: 0,
+            strokeColor: "#fff",
+            strokeWidth: 3,
+            strokeOpacity: 1,
+            fillOpacity: 1,
+            hover: {
+                size: 6
+            }
+        },
+        xaxis: {
+            type: "datetime",
+            axisBorder: {
+                show: false
+            },
+            axisTicks: {
+                show: false
+            }
+        },
+        yaxis: {
+            labels: {
+                offsetX: 14,
+                offsetY: -5
+            },
+            tooltip: {
+                enabled: true
+            }
+        },
+        grid: {
+            padding: {
+                left: -5,
+                right: 5
+            }
+        },
+        tooltip: {
+            x: {
+                format: "dd MMM yyyy"
+            },
+        },
+        fill: {
+            type: "gradient",
+            fillOpacity: 0.4
+        }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#timeline-chart"), options);
+    chart.render();
+
+    function generateDayWiseTimeSeries(s, count) {
+        var values = [[
+            4, 3, 10, 9, 29, 19, 25, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5
+        ]];
+        var i = 0;
+        var series = [];
+        var x = new Date("11 Nov 2012").getTime();
+        while (i < count) {
+            series.push([x, values[s][i]]);
+            x += 86400000;
+            i++;
+        }
+        return series;
+    }
+</script>
 <script src="{% static 'libs/apexcharts/dist/apexcharts.min.js'%}"></script>
-<script src="{% static 'libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js'%}"></script>
-<script src="{% static 'libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js'%}"></script>
 <script src="{% static 'js/pages/dashboard.init.js'%}"></script>
 {% endblock extra_js %}

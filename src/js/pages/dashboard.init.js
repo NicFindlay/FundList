@@ -117,7 +117,7 @@ var options = {
         data: [-11.45, -15.42, -7.9, -12.42, -12.6, -18.1, -18.2, -14.16, -11.1, -7.09, -15.34, -11.88]
     }],
     chart: {
-        type: 'bar',
+        type: 'area',
         height: 400,
         stacked: true,
         toolbar: {
