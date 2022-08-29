@@ -6,6 +6,8 @@ from .models import Fund, Company, PriceData
 
 def get_funds(request):
     fund_list = Fund.objects.order_by("-market_cap")
+    monthly_winners = Fund.objects.order_by("-one_month")
+    annual_winners = Fund.objects.order_by("-one_year")
     company_list = Company.objects.order_by("id")
     price_list = PriceData.objects.order_by("-date")
     # calculate_returns(fund_list, price_list)
@@ -13,6 +15,8 @@ def get_funds(request):
         "fund_list": fund_list,
         "company_list": company_list,
         "price_list": price_list,
+        "monthly_winners": monthly_winners,
+        "annual_winners": annual_winners,
     }
 
     return render(request, "dashboard.html", context)

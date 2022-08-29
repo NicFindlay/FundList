@@ -38,7 +38,7 @@
                                         month</span>
                                     <table class="table align-middle table-nowrap">
                                         <tbody>
-                                            {% for fund in fund_list|slice:":3" %}
+                                            {% for fund in monthly_winners|slice:":3" %}
                                             <tr class="no-border">
                                                 <td>
                                                     <div>
@@ -49,7 +49,8 @@
                                                 </td>
                                                 <td>
                                                     <div class="text-nowrap">
-                                                        <span class="badge bg-soft-success text-success">+8%</span>
+                                                        <span
+                                                            class="badge bg-soft-success text-success">{{fund.one_month}}%</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -70,12 +71,12 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1">
-                                    <h4 class="card-title">🥹 Biggest Losers</h4>
+                                    <h4 class="card-title">🔥 The Winners</h4>
                                     <span class="card-subtitle text-muted">this
-                                        month</span>
+                                        year</span>
                                     <table class="table align-middle table-nowrap">
                                         <tbody>
-                                            {% for fund in fund_list|slice:":3" %}
+                                            {% for fund in annual_winners|slice:":3" %}
                                             <tr class="no-border">
                                                 <td>
                                                     <div>
@@ -86,7 +87,8 @@
                                                 </td>
                                                 <td>
                                                     <div class="text-nowrap">
-                                                        <span class="badge bg-soft-danger text-danger">+8%</span>
+                                                        <span
+                                                            class="badge bg-soft-success text-success">{{fund.one_year}}%</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -107,12 +109,12 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1">
-                                    <h4 class="card-title">🔥 Hot Picks</h4>
+                                    <h4 class="card-title">🥹 Biggest Losers</h4>
                                     <span class="card-subtitle text-muted">this
                                         month</span>
                                     <table class="table align-middle table-nowrap">
                                         <tbody>
-                                            {% for fund in fund_list|slice:":3" %}
+                                            {% for fund in monthly_winners.reverse|slice:":3" %}
                                             <tr class="no-border">
                                                 <td>
                                                     <div>
@@ -123,7 +125,8 @@
                                                 </td>
                                                 <td>
                                                     <div class="text-nowrap">
-                                                        <span class="badge bg-soft-success text-success">+8%</span>
+                                                        <span
+                                                            class="badge bg-soft-danger text-danger">{{fund.one_month}}%</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -135,7 +138,7 @@
                             </div>
                         </div><!-- end card body -->
                     </div><!-- end card -->
-                </div><!-- end col -->
+                </div><!-- end col-->
             </div><!-- end row-->
 
             <div class="row">
@@ -177,7 +180,7 @@
                                             </th>
                                         </tr>
 
-                                        {% for fund in fund_list %}
+                                        {% for fund in fund_list|slice:":100" %}
                                         <tr>
                                             <td style="width: 10%;">
                                                 <div class="logo-image-frame">
