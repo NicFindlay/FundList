@@ -39,32 +39,50 @@
                                 </div>
                                 <div class="card-body">
                                     <div id="chart">
+                                        <div class="toolbar">
+                                            <button id="one_month" class="active">
+                                                1M
+                                            </button>
+
+                                            <button id="six_months">
+                                                6M
+                                            </button>
+
+                                            <button id="one_year" class="">
+                                                1Y
+                                            </button>
+
+                                            <button id="ytd" class="">
+                                                YTD
+                                            </button>
+
+                                            <button id="all">
+                                                ALL
+                                            </button>
+                                        </div>
                                         <div id="timeline-chart"></div>
                                     </div>
                                 </div>
+
+                                <!-- end card body -->
                             </div>
-
+                            <!-- end card -->
                         </div>
+                        <!-- end col -->
 
-                        <!-- end card body -->
-                    </div>
-                    <!-- end card -->
+                    </div><!-- end row -->
                 </div>
-                <!-- end col -->
+                <!-- container-fluid -->
 
-            </div><!-- end row -->
+            </div>
+            <!-- End Page-content -->
+
+
+
+            {% block footer %}
+            {% include 'partials/footer.html'%}
+            {% endblock footer %}
         </div>
-        <!-- container-fluid -->
+        <!-- end main content-->
 
-    </div>
-    <!-- End Page-content -->
-
-
-
-    {% block footer %}
-    {% include 'partials/footer.html'%}
-    {% endblock footer %}
-</div>
-<!-- end main content-->
-
-{% endblock content %}
+        {% endblock content %}
