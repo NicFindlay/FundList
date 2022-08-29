@@ -15,32 +15,36 @@ def remove_spam_from_name(name):
 def calculate_returns(fund_list, price_list):
     for fund in fund_list:
         print("Calculating returns " + fund.name)
-        local_price_list = []
-        for price in price_list:
-            if price.fund_link == fund:
-                local_price_list.append(price)
+        # local_price_list = []
 
-        if len(local_price_list) > 0:
-            latest_price = local_price_list[0].price
-            shares = local_price_list[0].shares
-            marketcap = local_price_list[0].market_cap
+        # for price in price_list:
+        #     if price.fund_link == fund:
+        #         local_price_list.append(price)
 
-            fund.market_cap = marketcap
-            fund.shares = shares
+        pricequery = PriceData.objects.filter(fund_link=fund.id).order_by("-date")
+
+        if len(pricequery) > 0:
+            latest_price = pricequery[0].price
+            # shares = local_price_list[0].shares
+            # marketcap = local_price_list[0].market_cap
+
+            # fund.market_cap = marketcap
+            # fund.shares = shares
             fund.price = latest_price
-            shares_vs_marketcap(fund, shares, marketcap, latest_price)
+            # shares_vs_marketcap(fund, shares, marketcap, latest_price)
 
-        if len(local_price_list) > 1:
-            last_price = local_price_list[1].price
-            print(str(last_price) + " | " + str(latest_price))
+        if len(pricequery) > 1:
+            last_price = pricequery[1].price
+            # print(str(last_price) + " | " + str(latest_price))
             fund.one_month = round(((latest_price - last_price) / last_price) * 100, 2)
 
-        if len(local_price_list) > 5:
-            six_price = local_price_list[5].price
+        if len(pricequery) > 5:
+            six_price = pricequery[5].price
             fund.six_month = round(((latest_price - six_price) / six_price) * 100, 2)
 
-        if len(local_price_list) > 11:
-            year_price = price_list[11].price
+        if len(pricequery) > 11:
+            year_price = pricequery[11].price
+            # print(str(year_price) + " | " + str(latest_price))
             fund.one_year = round(((latest_price - year_price) / year_price) * 100, 2)
 
         fund.save()

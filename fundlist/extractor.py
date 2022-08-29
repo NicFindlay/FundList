@@ -35,6 +35,47 @@ def get_factsheets():
             f.write("%s,%s\n" % (key, all_data[key]))
 
 
+def extract_morningstar_aum():
+    filename = "aum.csv"
+    fund_queryset = Fund.objects.all()
+    with open(filename, "r") as data:
+
+        for line in csv.reader(data):
+            print(line[2])
+            try:
+                cap = line[2].replace(",", "")
+                fund_queryset.filter(name=line[0]).update(market_cap=cap)
+            except:
+                print("Error")
+
+
+def extract_morningstar():
+    filename = "morningstar-monthly.csv"
+    headers = []  # head row titles
+    fund_queryset = Fund.objects.all()
+    price_queryset = PriceData.objects.all()
+
+    with open(filename, "r") as data:
+
+        for line in csv.reader(data):
+            if not headers:
+                headers = line
+            elif fund_queryset.filter(name=line[0]):
+                listcount = 0
+                for item in line[1:]:
+                    listcount = listcount + 1
+                    try:
+                        insert_price_data_morningstar(
+                            line[0], item, headers[listcount].replace("/", "-")
+                        )
+                    except:
+                        print("ERROR adding " + line[0])
+
+            else:
+                print("Adding " + line[0])
+                insert_fund(line[0])
+
+
 def extract_factsheets():
 
     filename = "bci_factsheets.csv"
@@ -86,6 +127,21 @@ def insert_fund(fund_name):
         print("An exception occurred trying to add Fund")
 
 
+def insert_price_data_morningstar(_name, _price, _date):
+
+    fund = Fund.objects.filter(name=_name)
+    if fund[0]:
+        price = PriceData.objects.filter(date=_date, fund_link=fund[0].id)
+        if not price:
+            new_price_data = PriceData.objects.create(
+                fund_link=fund[0],
+                price=_price,
+                date=_date,
+            )
+            new_price_data.save()
+            print("Price SAVED " + fund[0].name)
+
+
 def insert_price_data(_name, _price, _market_cap, _date):
 
     fund = Fund.objects.filter(name=_name)
@@ -105,4 +161,5 @@ def insert_price_data(_name, _price, _market_cap, _date):
 
 if __name__ == "__main__":
     # get_factsheets()
-    extract_factsheets()
+    # extract_factsheets()
+    pass
