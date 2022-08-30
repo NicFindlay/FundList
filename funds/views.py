@@ -25,10 +25,20 @@ def get_funds(request):
 def get_single_fund(request, fund):
     fund = fund.replace("-", " ")
     fund_object = Fund.objects.get(name=fund)
+    price_data = PriceData.objects.filter(fund_link=fund_object.id)
+    chart_data = []
+
+    for price in price_data:
+        col = []
+        col.append(price.date.strftime("%Y-%m"))
+        col.append(price.price)
+        chart_data.append(col)
 
     # calculate_returns(fund_list, price_list)
     context = {
         "fund": fund_object,
+        "price_data": price_data,
+        "chart_data": chart_data,
     }
     return render(request, "single-fund.html", context)
 
