@@ -3,6 +3,7 @@
 {% load humanize %}
 {% load fund_tags %}
 
+
 <div class="main-content">
 
     <div class="page-content">
@@ -148,8 +149,8 @@
                         <!-- card body -->
                         <div class="card-body px-0 pt-2">
                             <div class="table-responsive px-3" data-simplebar>
-                                <table class="table align-middle table-nowrap">
-                                    <tbody>
+                                <table id="table-sparkline" class="table align-middle table-nowrap">
+                                    <tbody id="tbody-sparkline">
                                         <tr>
                                             <th>
                                                 <p class="mb-1"><a href="" class="text-dark">#</a></p>
@@ -184,17 +185,18 @@
                                         <tr>
                                             <td style="width: 10%;">
                                                 <div class="logo-image-frame">
-                                                    <img src="{{fund.company_link.logo.url}}" class="img-fluid" alt="">
+                                                    {{ forloop.counter }} &nbsp&nbsp&nbsp<img
+                                                        src="{{fund.company_link.logo.url}}" class="img-fluid" alt="">
                                                 </div>
                                             </td>
-                                            <td style="width: 35%; overflow: hidden">
+                                            <th style="width: 35%; overflow: hidden">
                                                 <div>
                                                     <h5 class="font-size-15" style="max-width: 400px;"><a
                                                             class="text-dark"
                                                             href="{% url 'single_fund' fund.name|clean_slug %}">{{fund}}
                                                         </a></h5>
                                                 </div>
-                                            </td>
+                                            </th>
                                             <td>
                                                 <span class=" right-align">R{{fund.price}}</span>
                                             </td>
@@ -213,10 +215,15 @@
                                             <td>
                                                 <span class=" right-align">R{{fund.market_cap | intword}}</span>
                                             </td>
-                                            <td style="width: 20%;">
-                                                <div id="sparkline4" data-colors='["#F48B00"]'></div>
+
+                                            <td data-sparkline="71, 78, 39, 66, 71, 78, 39, 66, 71, 78, 39, 66, 66, 71, 78,66, 71, 78, "
+                                                style="width: 20%;">
+
                                             </td>
+
                                         </tr>
+
+
                                         {% endfor %}
                                     </tbody>
                                 </table>
@@ -234,6 +241,7 @@
 
     </div>
     <!-- End Page-content -->
+
 
 
     {% block footer %}
