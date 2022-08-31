@@ -42,6 +42,8 @@ urlpatterns = [
     ),
     # # Pages
     path("pages/", include("pages.urls")),
+    path("apps/", include("apps.urls")),
+    path("components/", include("components.urls")),
     # # Include the allauth and 2FA urls from their respective packages.
     path("/", include("allauth_2fa.urls")),
     path("account/", include("allauth.urls")),

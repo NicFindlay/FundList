@@ -42,10 +42,7 @@ DEFAULT_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
 ]
-LOCAL_APPS = [
-    "pages",
-    "funds",
-]
+LOCAL_APPS = ["pages", "funds", "apps"]
 THIRD_PARTY_APPS = [
     "crispy_forms",
     "django.contrib.humanize",
@@ -176,12 +173,12 @@ MESSAGE_TAGS = {
 
 # SMTP Configure
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST = "smtp-relay.sendinblue.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "Your Email Address"
-EMAIL_HOST_PASSWORD = "Your Host Password"
-DEFAULT_FROM_EMAIL = "Your Email Address"
+EMAIL_HOST_USER = "nic@visualclickstudio.com"
+EMAIL_HOST_PASSWORD = "fGYcrqydIB0gpDxZ"
+DEFAULT_FROM_EMAIL = "info@fundlist.co.za"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 

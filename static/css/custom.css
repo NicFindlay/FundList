@@ -16,7 +16,28 @@
     text-align: right;
 }
 
-.btn {
-    background-color: #1D84ED !Important;
+
+.header-button {
+    background: #fff;
+    color: #333;
+    margin-top: 15px;
+}
+
+.header-button-outline:hover {
+    color: #111;
+}
+
+
+.header-button-outline {
+    background: transparent;
+    border: 1px solid #fff;
     color: #fff;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header-button-outline:hover {
+    background: #fff;
+    color: #333;
 }
