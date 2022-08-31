@@ -1,0 +1,40 @@
+{% extends "account/base.html" %}
+{% load static %}
+{% block title %}Email Verification{% endblock title %}
+{% block content %}
+                    <div class="auth-full-page-content d-flex p-sm-5 p-4">
+                        <div class="w-100">
+                            <div class="d-flex flex-column h-100">
+                                <div class="mb-4 mb-md-5 text-center">
+                                    <a href="{% url 'dashboard' %}" class="d-block auth-logo">
+                                        <img src="{% static 'images/logo-sm.svg' %}" alt="" height="28"> <span class="logo-txt">Dason</span>
+                                    </a>
+                                </div>
+                                <div class="auth-content my-auto">
+                                    <div class="text-center">
+                                        <div class="avatar-lg mx-auto">
+                                            <div class="avatar-title rounded-circle bg-light">
+                                                <i class="bx bxs-envelope h2 mb-0 text-primary"></i>
+                                            </div>
+                                        </div>
+                                        <div class="p-2 mt-4">
+                                            <h4>Verify your email</h4>
+                                            <p>We have sent you verification email <span class="fw-bold">example@abc.com</span>, Please check it</p>
+                                            <div class="mt-4">
+                                                <a href="{% url 'dashboard' %}" class="btn btn-primary w-10">Verify email</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5 text-center">
+                                        <p class="text-muted mb-0">Didn't receive an email ? <a href="#"
+                                                class="text-primary fw-semibold"> Resend </a> </p>
+                                    </div>
+                                </div>
+                                <div class="mt-4 mt-md-5 text-center">
+                                    <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Dason   . Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end auth full page content -->
+{% endblock content %}

@@ -1,0 +1,109 @@
+{% extends "account/base.html" %}
+{% load static %}
+{% block title %}Register{% endblock title %}
+{% block content %}
+<div class="auth-full-page-content d-flex p-sm-5 p-4">
+    <div class="w-100">
+        <div class="d-flex flex-column h-100">
+            <div class="mb-4 mb-md-5 text-center">
+                <a href="{% url 'dashboard' %}" class="d-block auth-logo">
+                    <span class="logo-txt"><span style="font-weight: 200 !important;">Fund</span>List</span>
+                    </span>
+                </a>
+            </div>
+            <div class="auth-content my-auto">
+                <div class="text-center">
+                    <h4 class="mb-0">Register Account</h4>
+                </div>
+                <form class="needs-validation mt-4 pt-2" novalidate>
+
+                    <div class="form-floating form-floating-custom mb-4">
+                        <input type="email" class="form-control" id="input-email" placeholder="Enter Email" required>
+                        <div class="invalid-feedback">
+                            Please Enter Email
+                        </div>
+                        <label for="input-email">Email</label>
+                        <div class="form-floating-icon">
+                            <i data-feather="mail"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-floating form-floating-custom mb-4">
+                        <input type="text" class="form-control" id="input-username" placeholder="Enter User Name"
+                            required>
+                        <div class="invalid-feedback">
+                            Please Enter Username
+                        </div>
+                        <label for="input-username">Username</label>
+                        <div class="form-floating-icon">
+                            <i data-feather="users"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-floating form-floating-custom mb-4">
+                        <input type="password" class="form-control" id="input-password" placeholder="Enter Password"
+                            required>
+                        <div class="invalid-feedback">
+                            Please Enter Password
+                        </div>
+                        <label for="input-password">Password</label>
+                        <div class="form-floating-icon">
+                            <i data-feather="lock"></i>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="mb-0">By registering you agree to the FUNDLIST <a href="#" class="text-primary">Terms
+                                of
+                                Use</a></p>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Register</button>
+                    </div>
+                </form>
+
+                <div class="mt-4 pt-2 text-center">
+                    <div class="signin-other-title">
+                        <h5 class="font-size-14 mb-3 text-muted fw-medium">- Sign up using -</h5>
+                    </div>
+
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a href="javascript:void()" class="social-list-item bg-primary text-white border-primary">
+                                <i class="mdi mdi-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void()" class="social-list-item bg-info text-white border-info">
+                                <i class="mdi mdi-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void()" class="social-list-item bg-danger text-white border-danger">
+                                <i class="mdi mdi-google"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-5 text-center">
+                    <p class="text-muted mb-0">Already have an account ? <a
+                            href="{% url 'pages:pages.authentication.login' %}" class="text-primary fw-semibold"> Login
+                        </a> </p>
+                </div>
+            </div>
+            <div class="mt-4 mt-md-5 text-center">
+                <p class="mb-0">©
+                    <script>document.write(new Date().getFullYear())</script> FundList <i
+                        class="mdi mdi-heart text-danger"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end auth full page content -->
+{% endblock content %}
+
+
+{% block extra_js %}
+<!-- validation init -->
+<script src="{% static 'js/pages/validation.init.js'%}"></script>
+{% endblock extra_js %}

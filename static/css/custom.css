@@ -27,6 +27,21 @@
     color: #111;
 }
 
+.inline-block {
+    display: inline-block;
+}
+
+.fund-thumbnail {
+    display: inline-block;
+    margin-right: 20px;
+    min-height: 55px;
+    object-fit: contain;
+}
+
+.fund-title {
+    font-weight: 500 !important;
+}
+
 
 .header-button-outline {
     background: transparent;

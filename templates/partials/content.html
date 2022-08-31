@@ -145,7 +145,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <!-- card -->
-                    <div class="card">
+                    <div>
                         <!-- card body -->
                         <div class="card-body px-0 pt-2">
                             <div class="table-responsive px-3" data-simplebar>
@@ -156,7 +156,8 @@
                                                 <p class="mb-1"><a href="" class="text-dark">#</a></p>
                                             </th>
                                             <th>
-                                                <p class="mb-1"><a href="" class="text-dark ">Fund Name</a></p>
+                                                <p class="mb-1"><a href="" class="text-dark">Fund
+                                                        Name</a></p>
                                             </th>
                                             <th>
                                                 <p class="mb-1 right-align"><a href="" class="text-dark">Price</a></p>
@@ -183,16 +184,15 @@
 
                                         {% for fund in fund_list|slice:":100" %}
                                         <tr>
-                                            <td style="width: 10%;">
-                                                <div class="logo-image-frame">
-                                                    {{ forloop.counter }} &nbsp&nbsp&nbsp<img
-                                                        src="{{fund.company_link.logo.url}}" class="img-fluid" alt="">
-                                                </div>
+                                            <td style="width: 1%;">
+                                                {{ forloop.counter }} &nbsp&nbsp&nbsp
+
                                             </td>
-                                            <th style="width: 35%; overflow: hidden">
-                                                <div>
-                                                    <h5 class="font-size-15" style="max-width: 400px;"><a
-                                                            class="text-dark"
+                                            <th style="width: 40%; overflow: hidden">
+                                                <div><img src="{{fund.company_link.logo.url}}" width="70"
+                                                        class="img-fluid fund-thumbnail" alt="">
+                                                    <h5 class="font-size-15 inline-block" style="max-width: 400px;"><a
+                                                            class="text-dark fund-title"
                                                             href="{% url 'single_fund' fund.name|clean_slug %}">{{fund}}
                                                         </a></h5>
                                                 </div>
@@ -201,16 +201,34 @@
                                                 <span class=" right-align">R{{fund.price}}</span>
                                             </td>
                                             <td>
+                                                {% if fund.one_month >= 0 %}
                                                 <span
                                                     class="badge-big text-success right-align">{{fund.one_month}}%</span>
+                                                {% endif %}
+                                                {% if fund.one_month < 0 %} <span
+                                                    class="badge-big text-danger right-align">
+                                                    {{fund.one_month}}%</span>
+                                                    {% endif %}
                                             </td>
                                             <td>
+                                                {% if fund.six_month >= 0 %}
                                                 <span
                                                     class="badge-big text-success right-align">{{fund.six_month}}%</span>
+                                                {% endif %}
+                                                {% if fund.six_month < 0 %} <span
+                                                    class="badge-big text-danger right-align">
+                                                    {{fund.six_month}}%</span>
+                                                    {% endif %}
                                             </td>
                                             <td>
+                                                {% if fund.one_year >= 0 %}
                                                 <span
                                                     class="badge-big text-success right-align">{{fund.one_year}}%</span>
+                                                {% endif %}
+                                                {% if fund.one_year < 0 %} <span
+                                                    class="badge-big text-danger right-align">
+                                                    {{fund.one_year}}%</span>
+                                                    {% endif %}
                                             </td>
                                             <td>
                                                 <span class=" right-align">R{{fund.market_cap | intword}}</span>

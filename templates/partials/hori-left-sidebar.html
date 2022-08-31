@@ -31,42 +31,45 @@
                                             <div class="row g-0">
                                                 <div class="col-lg-5">
                                                     <div>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-alerts">Alerts</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-buttons">Buttons</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-cards">Cards</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-carousel">Carousel</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-dropdowns">Dropdowns</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-grid">Grid</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-images">Images</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-modals">Modals</a>
+                                                        <a href="{% url 'components:components.bootstrap.alerts' %}"
+                                                            class="dropdown-item" data-key="t-alerts">Alerts</a>
+                                                        <a href="{% url 'components:components.bootstrap.buttons' %}"
+                                                            class="dropdown-item" data-key="t-buttons">Buttons</a>
+                                                        <a href="{% url 'components:components.bootstrap.cards' %}"
+                                                            class="dropdown-item" data-key="t-cards">Cards</a>
+                                                        <a href="{% url 'components:components.bootstrap.carousel' %}"
+                                                            class="dropdown-item" data-key="t-carousel">Carousel</a>
+                                                        <a href="{% url 'components:components.bootstrap.dropdowns' %}"
+                                                            class="dropdown-item" data-key="t-dropdowns">Dropdowns</a>
+                                                        <a href="{% url 'components:components.bootstrap.grid' %}"
+                                                            class="dropdown-item" data-key="t-grid">Grid</a>
+                                                        <a href="{% url 'components:components.bootstrap.images' %}"
+                                                            class="dropdown-item" data-key="t-images">Images</a>
+                                                        <a href="{% url 'components:components.bootstrap.modals' %}"
+                                                            class="dropdown-item" data-key="t-modals">Modals</a>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-5">
                                                     <div>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-offcanvas">Offcanvas</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-progress-bars">Progress Bars</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
+                                                        <a href="{% url 'components:components.bootstrap.offcanvas' %}"
+                                                            class="dropdown-item" data-key="t-offcanvas">Offcanvas</a>
+                                                        <a href="{% url 'components:components.bootstrap.progressbars' %}"
+                                                            class="dropdown-item" data-key="t-progress-bars">Progress
+                                                            Bars</a>
+                                                        <a href="{% url 'components:components.bootstrap.placeholders' %}"
+                                                            class="dropdown-item"
                                                             data-key="t-progress-bars">Placeholders</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-tabs-accordions">Tabs & Accordions</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-typography">Typography</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-video">Video</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-general">General</a>
-                                                        <a href="javascript:void(0);" class="dropdown-item"
-                                                            data-key="t-colors">Colors</a>
+                                                        <a href="{% url 'components:components.bootstrap.tabs' %}"
+                                                            class="dropdown-item" data-key="t-tabs-accordions">Tabs &
+                                                            Accordions</a>
+                                                        <a href="{% url 'components:components.bootstrap.typography' %}"
+                                                            class="dropdown-item" data-key="t-typography">Typography</a>
+                                                        <a href="{% url 'components:components.bootstrap.video' %}"
+                                                            class="dropdown-item" data-key="t-video">Video</a>
+                                                        <a href="{% url 'components:components.bootstrap.general' %}"
+                                                            class="dropdown-item" data-key="t-general">General</a>
+                                                        <a href="{% url 'components:components.bootstrap.colors' %}"
+                                                            class="dropdown-item" data-key="t-colors">Colors</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -77,18 +80,19 @@
                                         <div>
                                             <div class="menu-title">Extended</div>
                                             <div>
-                                                <a href="javascript:void(0);" class="dropdown-item"
-                                                    data-key="t-lightbox">Lightbox</a>
-                                                <a href="javascript:void(0);" class="dropdown-item"
-                                                    data-key="t-range-slider">Range Slider</a>
-                                                <a href="javascript:void(0);" class="dropdown-item"
-                                                    data-key="t-sweet-alert">SweetAlert 2</a>
-                                                <a href="javascript:void(0);" class="dropdown-item"
-                                                    data-key="t-session-timeout">Session Timeout</a>
-                                                <a href="javascript:void(0);" class="dropdown-item"
-                                                    data-key="t-rating">Rating</a>
-                                                <a href="javascript:void(0);" class="dropdown-item"
-                                                    data-key="t-notifications">Notifications</a>
+                                                <a href="{% url 'components:components.extended.lightbox' %}"
+                                                    class="dropdown-item" data-key="t-lightbox">Lightbox</a>
+                                                <a href="{% url 'components:components.extended.rangeslider' %}"
+                                                    class="dropdown-item" data-key="t-range-slider">Range Slider</a>
+                                                <a href="{% url 'components:components.extended.sweetalerts2' %}"
+                                                    class="dropdown-item" data-key="t-sweet-alert">SweetAlert 2</a>
+                                                <a href="{% url 'components:components.extended.sessiontimeout' %}"
+                                                    class="dropdown-item" data-key="t-session-timeout">Session
+                                                    Timeout</a>
+                                                <a href="{% url 'components:components.extended.rating' %}"
+                                                    class="dropdown-item" data-key="t-rating">Rating</a>
+                                                <a href="{% url 'components:components.extended.notifications' %}"
+                                                    class="dropdown-item" data-key="t-notifications">Notifications</a>
                                             </div>
                                         </div>
                                     </div>
@@ -112,25 +116,28 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-ecommerce">
 
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'apps:ecommerce.products'%}" class="dropdown-item"
                                         data-key="t-products">Products</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'apps:ecommerce.product_detail'%}" class="dropdown-item"
                                         data-key="t-product-detail">Product Detail</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-orders">Orders</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'apps:ecommerce.orders'%}" class="dropdown-item"
+                                        data-key="t-orders">Orders</a>
+                                    <a href="{% url 'apps:ecommerce.customers'%}" class="dropdown-item"
                                         data-key="t-customers">Customers</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-cart">Cart</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'apps:ecommerce.cart'%}" class="dropdown-item"
+                                        data-key="t-cart">Cart</a>
+                                    <a href="{% url 'apps:ecommerce.checkout'%}" class="dropdown-item"
                                         data-key="t-checkout">Checkout</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-shops">Shops</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-add-product">Add
-                                        Product</a>
+                                    <a href="{% url 'apps:ecommerce.shops'%}" class="dropdown-item"
+                                        data-key="t-shops">Shops</a>
+                                    <a href="{% url 'apps:ecommerce.add_product'%}" class="dropdown-item"
+                                        data-key="t-add-product">Add Product</a>
                                 </div>
                             </div>
 
 
-                            <a href="javascript:void(0);" class="dropdown-item" data-key="t-calendar">Calendar</a>
-                            <a href="javascript:void(0);" class="dropdown-item" data-key="t-chat">Chat</a>
+                            <a href="{% url 'apps:calendar' %}" class="dropdown-item" data-key="t-calendar">Calendar</a>
+                            <a href="{% url 'apps:chat'%}" class="dropdown-item" data-key="t-chat">Chat</a>
 
                             <div class="dropdown">
                                 <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-email"
@@ -139,9 +146,10 @@
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-email">
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-inbox">Inbox</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-read-email">Read
-                                        Email</a>
+                                    <a href="{% url 'apps:email.inbox'%}" class="dropdown-item"
+                                        data-key="t-inbox">Inbox</a>
+                                    <a href="{% url 'apps:email.read'%}" class="dropdown-item"
+                                        data-key="t-read-email">Read Email</a>
                                 </div>
                             </div>
 
@@ -152,12 +160,12 @@
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-tasks">
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-task-list">Task
-                                        List</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-kanban-board">Kanban
-                                        Board</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-create-task">Create
-                                        Task</a>
+                                    <a href="{% url 'apps:tasks.list'%}" class="dropdown-item"
+                                        data-key="t-task-list">Task List</a>
+                                    <a href="{% url 'apps:tasks.kanban'%}" class="dropdown-item"
+                                        data-key="t-kanban-board">Kanban Board</a>
+                                    <a href="{% url 'apps:tasks.create'%}" class="dropdown-item"
+                                        data-key="t-create-task">Create Task</a>
                                 </div>
                             </div>
                             <div class="dropdown">
@@ -167,11 +175,12 @@
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-contact">
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-user-grid">User
-                                        Grid</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-user-list">User
-                                        List</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-profile">Profile</a>
+                                    <a href="{% url 'apps:contacts.usergrid'%}" class="dropdown-item"
+                                        data-key="t-user-grid">User Grid</a>
+                                    <a href="{% url 'apps:contacts.userlist'%}" class="dropdown-item"
+                                        data-key="t-user-list">User List</a>
+                                    <a href="{% url 'apps:contacts.profile'%}" class="dropdown-item"
+                                        data-key="t-profile">Profile</a>
                                 </div>
                             </div>
                         </div>
@@ -190,19 +199,20 @@
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-form">
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-form-elements">Basic
-                                        Elements</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'components:components.forms.basic_elements' %}"
+                                        class="dropdown-item" data-key="t-form-elements">Basic Elements</a>
+                                    <a href="{% url 'components:components.forms.validation' %}" class="dropdown-item"
                                         data-key="t-form-validation">Validation</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
-                                        data-key="t-form-advanced">Advanced Plugins</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'components:components.forms.advancedplugins' %}"
+                                        class="dropdown-item" data-key="t-form-advanced">Advanced Plugins</a>
+                                    <a href="{% url 'components:components.forms.editors' %}" class="dropdown-item"
                                         data-key="t-form-editors">Editors</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-form-upload">File
-                                        Upload</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'components:components.forms.fileupload' %}" class="dropdown-item"
+                                        data-key="t-form-upload">File Upload</a>
+                                    <a href="{% url 'components:components.forms.wizard' %}" class="dropdown-item"
                                         data-key="t-form-wizard">Wizard</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-form-mask">Mask</a>
+                                    <a href="{% url 'components:components.forms.mask' %}" class="dropdown-item"
+                                        data-key="t-form-mask">Mask</a>
                                 </div>
                             </div>
                             <div class="dropdown">
@@ -212,14 +222,14 @@
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-table">
-                                    <a href="javascript:void(0);" class="dropdown-item"
-                                        data-key="t-basic-tables">Bootstrap Basic</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-data-tables">Data
-                                        Tables</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
-                                        data-key="t-responsive-table">Responsive</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
-                                        data-key="t-editable-table">Editable</a>
+                                    <a href="{% url 'components:components.tables.bootstrap_basic' %}"
+                                        class="dropdown-item" data-key="t-basic-tables">Bootstrap Basic</a>
+                                    <a href="{% url 'components:components.tables.datatables' %}" class="dropdown-item"
+                                        data-key="t-data-tables">Data Tables</a>
+                                    <a href="{% url 'components:components.tables.responsive_tables' %}"
+                                        class="dropdown-item" data-key="t-responsive-table">Responsive</a>
+                                    <a href="{% url 'components:components.tables.editable_tables' %}"
+                                        class="dropdown-item" data-key="t-editable-table">Editable</a>
                                 </div>
                             </div>
                             <div class="dropdown">
@@ -229,15 +239,15 @@
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-charts">
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-apex-charts">Apex
-                                        charts</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-e-charts">E
-                                        charts</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'components:components.charts.apexcharts' %}" class="dropdown-item"
+                                        data-key="t-apex-charts">Apex charts</a>
+                                    <a href="{% url 'components:components.charts.echarts' %}" class="dropdown-item"
+                                        data-key="t-e-charts">E charts</a>
+                                    <a href="{% url 'components:components.charts.chartjs' %}" class="dropdown-item"
                                         data-key="t-chartjs-charts">Chartjs</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-knob-charts">Jquery
-                                        Knob</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'components:components.charts.knob' %}" class="dropdown-item"
+                                        data-key="t-knob-charts">Jquery Knob</a>
+                                    <a href="{% url 'components:components.charts.sparkline' %}" class="dropdown-item"
                                         data-key="t-sparkline-charts">Sparkline</a>
                                 </div>
                             </div>
@@ -248,15 +258,16 @@
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-icons">
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-feather">Feather</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'components:components.icons.feather' %}" class="dropdown-item"
+                                        data-key="t-feather">Feather</a>
+                                    <a href="{% url 'components:components.icons.boxicons' %}" class="dropdown-item"
                                         data-key="t-boxicons">Boxicons</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
-                                        data-key="t-material-design">Material Design</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'components:components.icons.materialdesign' %}"
+                                        class="dropdown-item" data-key="t-material-design">Material Design</a>
+                                    <a href="{% url 'components:components.icons.dripicons' %}" class="dropdown-item"
                                         data-key="t-dripicons">Dripicons</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-font-awesome">Font
-                                        Awesome 5</a>
+                                    <a href="{% url 'components:components.icons.fontawesome' %}" class="dropdown-item"
+                                        data-key="t-font-awesome">Font Awesome 5</a>
                                 </div>
                             </div>
                             <div class="dropdown">
@@ -266,9 +277,12 @@
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-map">
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-g-maps">Google</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-v-maps">Vector</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-l-maps">Leaflet</a>
+                                    <a href="{% url 'components:components.maps.googlemaps' %}" class="dropdown-item"
+                                        data-key="t-g-maps">Google</a>
+                                    <a href="{% url 'components:components.maps.vectormaps' %}" class="dropdown-item"
+                                        data-key="t-v-maps">Vector</a>
+                                    <a href="{% url 'components:components.maps.leaflet' %}" class="dropdown-item"
+                                        data-key="t-l-maps">Leaflet</a>
                                 </div>
                             </div>
                         </div>
@@ -288,20 +302,23 @@
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-auth">
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-login">Login</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'pages:pages.authentication.login' %}" class="dropdown-item"
+                                        data-key="t-login">Login</a>
+                                    <a href="{% url 'pages:pages.authentication.register' %}" class="dropdown-item"
                                         data-key="t-register">Register</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'pages:pages.authentication.recoverpw' %}" class="dropdown-item"
                                         data-key="t-recover-password">Recover Password</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-lock-screen">Lock
-                                        Screen</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-logout">Log Out</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'pages:pages.authentication.lockscreen' %}" class="dropdown-item"
+                                        data-key="t-lock-screen">Lock Screen</a>
+                                    <a href="{% url 'pages:pages.authentication.logout' %}" class="dropdown-item"
+                                        data-key="t-logout">Log Out</a>
+                                    <a href="{% url 'pages:pages.authentication.confirm_mail' %}" class="dropdown-item"
                                         data-key="t-confirm-mail">Confirm Mail</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
-                                        data-key="t-email-verification">Email verification</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
-                                        data-key="t-two-step-verification">Two step verification</a>
+                                    <a href="{% url 'pages:pages.authentication.email_verification' %}"
+                                        class="dropdown-item" data-key="t-email-verification">Email verification</a>
+                                    <a href="{% url 'pages:pages.authentication.two_step_verification' %}"
+                                        class="dropdown-item" data-key="t-two-step-verification">Two step
+                                        verification</a>
                                 </div>
                             </div>
                             <div class="dropdown">
@@ -311,20 +328,22 @@
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-utility">
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'pages:pages.starter_page' %}" class="dropdown-item"
                                         data-key="t-starter-page">Starter Page</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'pages:pages.maintenance' %}" class="dropdown-item"
                                         data-key="t-maintenance">Maintenance</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-coming-soon">Coming
-                                        Soon</a>
-                                    <a href="javascript:void(0);" class="dropdown-item"
+                                    <a href="{% url 'pages:pages.comingsoon' %}" class="dropdown-item"
+                                        data-key="t-coming-soon">Coming Soon</a>
+                                    <a href="{% url 'pages:pages.timeline' %}" class="dropdown-item"
                                         data-key="t-timeline">Timeline</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-faqs">FAQs</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-pricing">Pricing</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-error-404">Error
-                                        404</a>
-                                    <a href="javascript:void(0);" class="dropdown-item" data-key="t-error-500">Error
-                                        500</a>
+                                    <a href="{% url 'pages:pages.faqs' %}" class="dropdown-item"
+                                        data-key="t-faqs">FAQs</a>
+                                    <a href="{% url 'pages:pages.pricing' %}" class="dropdown-item"
+                                        data-key="t-pricing">Pricing</a>
+                                    <a href="{% url 'pages:pages.error_404' %}" class="dropdown-item"
+                                        data-key="t-error-404">Error 404</a>
+                                    <a href="{% url 'pages:pages.error_500' %}" class="dropdown-item"
+                                        data-key="t-error-500">Error 500</a>
                                 </div>
                             </div>
                         </div>
@@ -336,6 +355,7 @@
                             <i data-feather="layout"></i><span data-key="t-horizontal">Horizontal</span>
                         </a>
                     </li>
+
                 </ul>
             </div>
         </nav>

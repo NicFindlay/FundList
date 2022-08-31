@@ -9,15 +9,13 @@
         <div class="d-flex flex-column h-100">
             <div class="mb-4 mb-md-5 text-center">
                 <a href="{% url 'dashboard' %}" class="d-block auth-logo">
-                    <img src="{% static 'images/logo-sm.svg' %}" alt="" height="28"> <span class="logo-txt"><span
-                            style="font-weight: 200 !important;">Fund</span>List</span>
+                    <span class="logo-txt"><span style="font-weight: 200 !important;">Fund</span>List</span>
                     </span>
                 </a>
             </div>
             <div class="auth-content my-auto">
                 <div class="text-center">
                     <h5 class="mb-0">Register Account</h5>
-                    <p class="text-muted mt-2">Get your free Dason account now.</p>
                 </div>
                 <form class="needs-validation mt-4 pt-2" novalidate method="POST" action="{% url 'account_signup' %}"
                     enctype="multipart/form-data">
@@ -43,7 +41,8 @@
                     {{ form|crispy}}
 
                     <div class="mb-4">
-                        <p class="mb-0">By registering you agree to the Dason <a href="#" class="text-primary">Terms of
+                        <p class="mb-0">By registering you agree to the FundList <a href="#" class="text-primary">Terms
+                                of
                                 Use</a></p>
                     </div>
                     <div class="mb-3">
@@ -51,7 +50,7 @@
                     </div>
                 </form>
 
-                <div class="mt-4 pt-2 text-center">
+                <!-- <div class="mt-4 pt-2 text-center">
                     <div class="signin-other-title">
                         <h5 class="font-size-14 mb-3 text-muted fw-medium">- Sign up using -</h5>
                     </div>
@@ -74,7 +73,7 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
 
                 <div class="mt-5 text-center">
                     <p class="text-muted mb-0">Already have an account ? <a href="{% url 'account_login' %}"
@@ -83,7 +82,7 @@
                 </div>
             </div>
             <div class="mt-4 mt-md-5 text-center">
-                <p class="mb-0">©
+                <p class="mb-0 ">©
                     <script>document.write(new Date().getFullYear())</script> FundList <i
                         class="mdi mdi-heart text-danger"></i>
             </div>

@@ -40,7 +40,7 @@ urlpatterns = [
         login_required(fundlist_views.MyPasswordSetView.as_view()),
         name="account_set_password",
     ),
-    # # Pages
+    # APPS URLS
     path("pages/", include("pages.urls")),
     path("apps/", include("apps.urls")),
     path("components/", include("components.urls")),
