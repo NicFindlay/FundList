@@ -10,12 +10,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h2 class="mb-sm-0 font-size-26">{{fund.name}}</h2>
+                        <h1 class="mb-sm-0 font-size-26">{{fund.name}}</h1>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">{{pageview}}</a></li>
                                 <li class="breadcrumb-item active">{{title}}</li>
+                                <li class="breadcrumb-item active">{{fund.name}}</li>
                             </ol>
                         </div>
 
@@ -25,51 +26,128 @@
             <!-- end page title -->
 
 
+            <div class="row">
+                <div class="col-xl-4 col-md-6">
+                    <div class="fund-info-section">
+
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 me-3 d-sm-block d-none">
+                                <button type="button"
+                                    class="inline-block btn btn-soft-success waves-effect waves-light">Rank
+                                    #1</button>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6>Market Cap: R{{fund.market_cap | intword}}</h6>
+                                <h6>NAV Price: R{{fund.price | intword}}</h6>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <!-- card -->
+                    <div class="card card-h-100">
+                        <!-- card body -->
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <h4 class="card-title">🚀 Top Gainers</h4>
+                                    <span class="card-subtitle text-muted">this
+                                        month</span>
+                                    <table class="table align-middle table-nowrap">
+                                        <tbody>
+                                            {% for fund in monthly_winners|slice:":3" %}
+                                            <tr class="no-border">
+                                                <td>
+                                                    <div>
+                                                        <h5 class="font-size-13"><a href=""
+                                                                class="text-dark">{{fund}}</a>
+                                                        </h5>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-nowrap">
+                                                        <span
+                                                            class="badge bg-soft-success text-success">{{fund.one_month}}%</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
+
+                <div class="col-xl-4 col-md-6">
+                    <!-- card -->
+                    <div class="card card-h-100">
+                        <!-- card body -->
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <h4 class="card-title">🔥 The Winners</h4>
+                                    <span class="card-subtitle text-muted">this
+                                        year</span>
+                                    <table class="table align-middle table-nowrap">
+                                        <tbody>
+                                            {% for fund in annual_winners|slice:":3" %}
+                                            <tr class="no-border">
+                                                <td>
+                                                    <div>
+                                                        <h5 class="font-size-13"><a href=""
+                                                                class="text-dark">{{fund}}</a>
+                                                        </h5>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-nowrap">
+                                                        <span
+                                                            class="badge bg-soft-success text-success">{{fund.one_year}}%</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col-->
+            </div><!-- end row-->
+
+
 
             <div class="row">
-                <div class="col-xl-12">
-                    <!-- card -->
-                    <div class="card">
-                        <!-- card body -->
-                        <div class="card-body px-0 pt-2">
-                            <div class="table-responsive px-3" data-simplebar>
+                <div class="col-xl-8">
+                    <div class="table-responsive px-3" data-simplebar>
+                        <div class="card-body">
+                            <div id="chart">
+                                <div class="toolbar">
 
-                                <div class="card-header">
-                                    <h4 class="card-title mb-0">Spline Area</h4>
+                                    <button id="one_month" type="button"
+                                        class="btn-soft-primary waves-effect waves-light">1M</button>
+                                    <button id="six_month" type="button"
+                                        class="btn-soft-primary waves-effect waves-light">6M</button>
+                                    <button id="one_year" type="button"
+                                        class="btn-soft-primary waves-effect waves-light">1Y</button>
+                                    <button id="one_month" type="button"
+                                        class="btn-soft-primary waves-effect waves-light">ALL</button>
                                 </div>
+                                <div id="timeline-chart"></div>
+                                <div id="chart-line"></div>
 
-                                <div class="card-body">
-                                    <div id="chart">
-                                        <div class="toolbar">
-                                            <button id="one_month" class="active">
-                                                1M
-                                            </button>
-
-                                            <button id="six_months">
-                                                6M
-                                            </button>
-
-                                            <button id="one_year" class="">
-                                                1Y
-                                            </button>
-
-                                            <button id="ytd" class="">
-                                                YTD
-                                            </button>
-
-                                            <button id="all">
-                                                ALL
-                                            </button>
-                                        </div>
-                                        <div id="timeline-chart"></div>
-                                        <div id="chart-line"></div>
-
-                                    </div>
-                                </div>
-
-                                <!-- end card body -->
                             </div>
-                            <!-- end card -->
+
                         </div>
                         <!-- end col -->
 
