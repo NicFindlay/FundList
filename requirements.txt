@@ -32,7 +32,7 @@ numpy
 oauthlib==3.2.0
 olefile==0.46
 outcome==1.2.0
-pandas==1.4.3
+pandas
 pathspec==0.9.0
 pdfminer.six==20191110
 Pillow==9.2.0
