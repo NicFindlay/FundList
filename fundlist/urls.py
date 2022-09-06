@@ -24,7 +24,6 @@ urlpatterns = [
     path("", fund_views.get_funds),
     path("fund/<str:fund>/", fund_views.get_single_fund, name="single_fund"),
     path("admin/", admin.site.urls),
-    path("apex/", fundlist_views.get_apex),
     # # Dashboard
     path("", fundlist_views.DashboardView.as_view(), name="dashboard"),
     path("settings", fundlist_views.Settings.as_view(), name="settings"),

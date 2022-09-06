@@ -23,10 +23,6 @@ def get_dashboard(request):
     return render(request, "dashboard.html")
 
 
-def get_apex(request):
-    return render(request, "components/charts/charts-apex.html")
-
-
 class Settings(LoginRequiredMixin, View):
     template_name = "settings.html"
 
