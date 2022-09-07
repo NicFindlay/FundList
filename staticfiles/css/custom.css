@@ -1,0 +1,63 @@
+/** My Custom CSS Changes **/
+
+
+.logo-image-frame {
+    height: 25px;
+    width: 70px;
+    margin: 1.5em 0;
+}
+
+.no-border td {
+    border-bottom-width: 0px;
+    padding: 0.4rem 0.4rem;
+}
+
+.right-align {
+    text-align: right;
+}
+
+
+.header-button {
+    background: #fff;
+    color: #333;
+    margin-top: 15px;
+}
+
+.header-button-outline:hover {
+    color: #111;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.fund-thumbnail {
+    display: inline-block;
+    margin-right: 20px;
+    min-height: 55px;
+    object-fit: contain;
+}
+
+.fund-title {
+    font-weight: 500 !important;
+}
+
+
+.fund-info-section {
+    padding-bottom: 30px;
+
+}
+
+.header-button-outline {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header-button-outline:hover {
+    background: #fff;
+    color: #333;
+}

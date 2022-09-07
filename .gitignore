@@ -2137,7 +2137,6 @@ node_modules/@simonwep/pickr/.github/ISSUE_TEMPLATE/misc.md
 node_modules/@simonwep/pickr/.github/ISSUE_TEMPLATE/question.md
 node_modules/@simonwep/pickr/.github/workflows/ci.yml
 node_modules/@simonwep/pickr/dist/pickr.es5.min.js
-node_modules/@simonwep/pickr/dist/pickr.es5.min.js.map
 node_modules/@simonwep/pickr/dist/pickr.min.js
 node_modules/@simonwep/pickr/dist/pickr.min.js.map
 node_modules/@simonwep/pickr/dist/themes/classic.min.css

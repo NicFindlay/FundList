@@ -73,3 +73,5 @@ Wand==0.6.9
 wsproto==1.1.0
 xlrd==1.2.0
 XlsxWriter==3.0.3
+whitenoise
+gunicorn

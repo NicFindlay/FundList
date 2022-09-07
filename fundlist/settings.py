@@ -58,6 +58,7 @@ THIRD_PARTY_APPS = [
     # Enable two-factor auth.
     "allauth_2fa",
     "django_extensions",
+    "whitenoise.runserver_nostatic",
 ]
 INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
@@ -75,6 +76,7 @@ MIDDLEWARE = [
     # flow is reset if another page is loaded between login and successfully
     # entering two-factor credentials.
     "allauth_2fa.middleware.AllauthTwoFactorMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ACCOUNT_ADAPTER = "allauth_2fa.adapter.OTPAdapter"
