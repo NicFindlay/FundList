@@ -4,7 +4,7 @@ services:
   web:
     build: .
     #command: python /FUNDLIST-MASTER/manage.py runserver 0.0.0.0:8000
-    command: gunicorn django_project.wsgi -b 0.0.0.0:8000 # new
+    command: gunicorn fundlist.wsgi -b 0.0.0.0:8000 # new
     volumes:
       - .:/FUNDLIST-MASTER
     ports:
