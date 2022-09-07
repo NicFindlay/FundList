@@ -28,7 +28,13 @@ SECRET_KEY = "django-insecure-5&yr)&mo2t3y$9$vrjwj8-p%bu&7@oa*e1%qwi0$o5wac3rxcr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "https://fundlist.herokuapp.com/",
+    "localhost",
+    "127.0.0.1",
+    "https://fundlist.co.za",
+    "http://fundlist.co.za",
+]
 
 
 # Application definition
