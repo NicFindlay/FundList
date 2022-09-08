@@ -1,1 +1,1 @@
-web: gunicorn fundlist.wsgi --log-file -
+web: python manage.py migrate && gunicorn fundlist.wsgi
