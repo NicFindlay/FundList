@@ -58,7 +58,6 @@ THIRD_PARTY_APPS = [
     # Enable two-factor auth.
     "allauth_2fa",
     "django_extensions",
-    "whitenoise.runserver_nostatic",
 ]
 INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
@@ -76,7 +75,6 @@ MIDDLEWARE = [
     # flow is reset if another page is loaded between login and successfully
     # entering two-factor credentials.
     "allauth_2fa.middleware.AllauthTwoFactorMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ACCOUNT_ADAPTER = "allauth_2fa.adapter.OTPAdapter"
@@ -159,6 +157,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
