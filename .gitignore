@@ -1,5 +1,8 @@
 __pycache__/
+.env
+.venv
 chromedriver
+staticfiles/
 node_modules
 node_modules/.yarn-integrity
 node_modules/.bin/acorn
