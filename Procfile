@@ -1,0 +1,1 @@
+web: gunicorn fundlist.wsgi --log-file -
