@@ -14,6 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path, include, re_path
 from funds import views as fund_views
 from fundlist import views as fundlist_views
@@ -51,4 +53,4 @@ urlpatterns = [
         "calculate_returns/", fundlist_views.calculate_returns, name="calculate_returns"
     ),
     path("search/", fund_views.search_funds, name="search_funds"),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

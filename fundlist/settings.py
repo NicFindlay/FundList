@@ -11,14 +11,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
-from dotenv import load_dotenv
+
 from pathlib import Path
 from django.conf import settings
 from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-load_dotenv(os.path.join(BASE_DIR, ".env"))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -58,6 +58,7 @@ THIRD_PARTY_APPS = [
     # Enable two-factor auth.
     "allauth_2fa",
     "django_extensions",
+    "whitenoise.runserver_nostatic",
 ]
 INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
@@ -75,6 +76,7 @@ MIDDLEWARE = [
     # flow is reset if another page is loaded between login and successfully
     # entering two-factor credentials.
     "allauth_2fa.middleware.AllauthTwoFactorMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ACCOUNT_ADAPTER = "allauth_2fa.adapter.OTPAdapter"
@@ -157,8 +159,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"  # new
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
