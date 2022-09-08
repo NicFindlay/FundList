@@ -3,8 +3,8 @@ version: "3.9"
 services:
   web:
     build: .
-    command: python /FUNDLIST-MASTER/manage.py runserver 0.0.0.0:8000
-    #command: gunicorn fundlist.wsgi -b 0.0.0.0:8000 # new
+    #command: python /FUNDLIST-MASTER/manage.py runserver 0.0.0.0:8000
+    command: gunicorn fundlist.wsgi -b 0.0.0.0:8000 # new
     volumes:
       - .:/FUNDLIST-MASTER
     ports:
