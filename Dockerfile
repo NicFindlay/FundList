@@ -1,6 +1,6 @@
 # Pull base image
 
-FROM --platform=linux/amd64 python:3.10.4-slim-bullseye
+FROM --platform=linux/amd64 python:3.9.9-slim-bullseye
 
 # set environmental variables
 ENV PIP_DISABLE_PIP_VERSION_CHECK 1

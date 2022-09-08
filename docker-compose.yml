@@ -9,6 +9,8 @@ services:
       - .:/FUNDLIST-MASTER
     ports:
       - "8000:8000"
+    # environment:
+    #   - "SECRET_KEY=django-insecure-5&yr)&mo2t3y$9$vrjwj8-p%bu&7@oa*e1%qwi0$o5wac3rxcr"
     # depends_on:
     #   - db
 
