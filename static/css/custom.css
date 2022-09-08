@@ -61,3 +61,18 @@
     background: #fff;
     color: #333;
 }
+
+
+.above-header {
+    background: var(--bs-light);
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 1px;
+}
+
+.gradient-text {
+    font-weight: 700;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ef6767), to(#f5b11e));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
