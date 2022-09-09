@@ -43,8 +43,9 @@
                                             <tr class="no-border">
                                                 <td>
                                                     <div>
-                                                        <h5 class="font-size-13 normal-weight"><a href=""
-                                                                class="text-dark">{{fund}}</a>
+                                                        <h5 class="font-size-13 normal-weight"><a
+                                                                href="{% url 'single_fund' fund.name|clean_slug %}"
+                                                                class=" text-dark">{{fund}}</a>
                                                         </h5>
                                                     </div>
                                                 </td>
@@ -81,8 +82,9 @@
                                             <tr class="no-border">
                                                 <td>
                                                     <div>
-                                                        <h5 class="font-size-13 normal-weight"><a href=""
-                                                                class="text-dark">{{fund}}</a>
+                                                        <h5 class="font-size-13 normal-weight"><a
+                                                                href="{% url 'single_fund' fund.name|clean_slug %}"
+                                                                class=" text-dark">{{fund}}</a>
                                                         </h5>
                                                     </div>
                                                 </td>
@@ -119,8 +121,9 @@
                                             <tr class="no-border">
                                                 <td class="fund-name">
                                                     <div>
-                                                        <h5 class="font-size-13 normal-weight"><a href=""
-                                                                class="text-dark">{{fund}}</a>
+                                                        <h5 class="font-size-13 normal-weight"><a
+                                                                href="{% url 'single_fund' fund.name|clean_slug %}"
+                                                                class=" text-dark">{{fund}}</a>
                                                         </h5>
                                                     </div>
                                                 </td>

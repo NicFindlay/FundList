@@ -3,8 +3,15 @@
 {% block header %}
 <header id="page-topbar">
     <div class="above-header">
-        <p class="mb-1 text-dark">FundList is in <span class="gradient-text">BETA</span> - view data at your own risk
-        </p>
+        <div class="above-header-content">
+            <p class="mb-1 text-dark stats">SA Unit Trusts <span class="gradient-text-blue">{{ fund_list.count }}</span>
+            </p>
+            <p class="mb-1 text-dark stats">Total Value <span class="gradient-text-blue">{{ price_list.count }}</span>
+            </p>
+            <p class="mb-1 text-dark"> -- FundList is in <span class="gradient-text">BETA</span> - view data at your own
+                risk
+            </p>
+        </div>
     </div>
     <div class="navbar-header">
         <div class="d-flex">
@@ -136,5 +143,7 @@
 
         </div>
     </div>
+
+
 </header>
 {% endblock header %}
