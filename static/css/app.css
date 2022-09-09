@@ -29,7 +29,7 @@ body[data-layout-mode=dark] h6 {
 }
 
 #page-topbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
@@ -329,8 +329,7 @@ body[data-layout=horizontal] .navbar-brand-box {
 }
 
 body[data-layout=horizontal] .page-content {
-  margin-top: 70px;
-  padding: calc(75px + 24px) calc(10px / 2) 60px calc(10px / 2);
+  padding: calc(95px + 24px) calc(10px / 2) 60px calc(10px / 2);
 }
 
 @media (min-width: 992px) {
