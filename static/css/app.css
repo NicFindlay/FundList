@@ -307,11 +307,6 @@ body[data-topbar=dark] .app-search input.form-control::-webkit-input-placeholder
   }
 }
 
-@media (max-width: 380px) {
-  .navbar-brand-box {
-    display: none;
-  }
-}
 
 body[data-layout=horizontal] #page-topbar {
   -webkit-box-shadow: none;
@@ -1111,7 +1106,7 @@ body[data-sidebar-size=md] .navbar-brand-box {
 
 @media (max-width: 991.98px) {
   body[data-sidebar-size=md] .navbar-brand-box {
-    width: auto;
+    width: 120px;
   }
 }
 
@@ -1503,9 +1498,7 @@ body[data-layout-mode=dark][data-sidebar=light] .sidebar-alert .alertcard-title 
     display: block;
   }
 
-  .navbar-brand-box .logo-light {
-    display: none;
-  }
+
 
   .topnav {
     max-height: 360px;

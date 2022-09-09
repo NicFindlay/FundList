@@ -66,13 +66,32 @@
 .above-header {
     background: var(--bs-light);
     text-align: center;
-    padding-top: 5px;
-    padding-bottom: 1px;
+    padding: 5px 24px 1px 24px;
+}
+
+.above-header-content {
+    max-width: 90%;
+}
+
+.above-header p {
+    display: inline-block;
+}
+
+
+.above-header .stats {
+    margin-right: 2%;
 }
 
 .gradient-text {
     font-weight: 700;
     background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ef6767), to(#f5b11e));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-blue {
+    font-weight: 600;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #3a85e0), to(#019ce9));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -83,6 +102,10 @@
 
 .card-top-info .percentage {
     vertical-align: top;
+}
+
+.card-top-info .card-body {
+    padding: 1rem 1rem
 }
 
 .full-fundlist .rank {
@@ -99,7 +122,9 @@
 @media only screen and (max-width: 900px) {
 
     .login-button,
-    .register-button {
+    .register-button,
+    .user-menu-block,
+    #page-header-user-dropdown {
         display: none;
     }
 
