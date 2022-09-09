@@ -76,3 +76,34 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.normal-weight {
+    font-weight: 500;
+}
+
+.card-top-info .percentage {
+    vertical-align: top;
+}
+
+.full-fundlist .rank {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+
+
+
+/* MOBILE CUSTOM CSS */
+
+@media only screen and (max-width: 900px) {
+
+    .login-button,
+    .register-button {
+        display: none;
+    }
+
+    .pace-activity {
+        display: none;
+    }
+}

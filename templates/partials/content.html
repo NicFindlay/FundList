@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-xl-4 col-md-6">
                     <!-- card -->
-                    <div class="card card-h-100">
+                    <div class="card card-h-100 card-top-info">
                         <!-- card body -->
                         <div class="card-body">
                             <div class="d-flex align-items-center">
@@ -37,18 +37,18 @@
                                     <h4 class="card-title">🚀 Top Gainers</h4>
                                     <span class="card-subtitle text-muted">this
                                         month</span>
-                                    <table class="table align-middle table-nowrap">
+                                    <table class="table align-middle">
                                         <tbody>
                                             {% for fund in monthly_winners|slice:":3" %}
                                             <tr class="no-border">
                                                 <td>
                                                     <div>
-                                                        <h5 class="font-size-13"><a href=""
+                                                        <h5 class="font-size-13 normal-weight"><a href=""
                                                                 class="text-dark">{{fund}}</a>
                                                         </h5>
                                                     </div>
                                                 </td>
-                                                <td>
+                                                <td class="percentage">
                                                     <div class="text-nowrap">
                                                         <span
                                                             class="badge bg-soft-success text-success">{{fund.one_month}}%</span>
@@ -67,7 +67,7 @@
 
                 <div class="col-xl-4 col-md-6">
                     <!-- card -->
-                    <div class="card card-h-100">
+                    <div class="card card-h-100 card-top-info">
                         <!-- card body -->
                         <div class="card-body">
                             <div class="d-flex align-items-center">
@@ -75,18 +75,18 @@
                                     <h4 class="card-title">🔥 The Winners</h4>
                                     <span class="card-subtitle text-muted">this
                                         year</span>
-                                    <table class="table align-middle table-nowrap">
+                                    <table class="table align-middle">
                                         <tbody>
                                             {% for fund in annual_winners|slice:":3" %}
                                             <tr class="no-border">
                                                 <td>
                                                     <div>
-                                                        <h5 class="font-size-13"><a href=""
+                                                        <h5 class="font-size-13 normal-weight"><a href=""
                                                                 class="text-dark">{{fund}}</a>
                                                         </h5>
                                                     </div>
                                                 </td>
-                                                <td>
+                                                <td class="percentage">
                                                     <div class="text-nowrap">
                                                         <span
                                                             class="badge bg-soft-success text-success">{{fund.one_year}}%</span>
@@ -105,7 +105,7 @@
 
                 <div class="col-xl-4 col-md-6">
                     <!-- card -->
-                    <div class="card card-h-100">
+                    <div class="card card-h-100 card-top-info">
                         <!-- card body -->
                         <div class="card-body">
                             <div class="d-flex align-items-center">
@@ -113,18 +113,18 @@
                                     <h4 class="card-title">🥹 Biggest Losers</h4>
                                     <span class="card-subtitle text-muted">this
                                         month</span>
-                                    <table class="table align-middle table-nowrap">
+                                    <table class="table align-middle">
                                         <tbody>
                                             {% for fund in monthly_winners.reverse|slice:":3" %}
                                             <tr class="no-border">
-                                                <td>
+                                                <td class="fund-name">
                                                     <div>
-                                                        <h5 class="font-size-13"><a href=""
+                                                        <h5 class="font-size-13 normal-weight"><a href=""
                                                                 class="text-dark">{{fund}}</a>
                                                         </h5>
                                                     </div>
                                                 </td>
-                                                <td>
+                                                <td class="percentage">
                                                     <div class="text-nowrap">
                                                         <span
                                                             class="badge bg-soft-danger text-danger">{{fund.one_month}}%</span>
@@ -142,7 +142,7 @@
                 </div><!-- end col-->
             </div><!-- end row-->
 
-            <div class="row">
+            <div class="row full-fundlist">
                 <div class="col-xl-12">
                     <!-- card -->
                     <div>
@@ -152,8 +152,8 @@
                                 <table id="table-sparkline" class="table align-middle table-nowrap">
                                     <tbody id="tbody-sparkline">
                                         <tr>
-                                            <th>
-                                                <p class="mb-1"><a href="" class="text-dark">#</a></p>
+                                            <th class="rank">
+                                                <a href="" class="text-dark">#</a>
                                             </th>
                                             <th>
                                                 <p class="mb-1"><a href="" class="text-dark">Fund
@@ -184,8 +184,8 @@
 
                                         {% for fund in fund_list|slice:":100" %}
                                         <tr>
-                                            <td style="width: 1%;">
-                                                {{ forloop.counter }} &nbsp&nbsp&nbsp
+                                            <td class="rank">
+                                                {{ forloop.counter }}
 
                                             </td>
                                             <th style="width: 40%; overflow: hidden">

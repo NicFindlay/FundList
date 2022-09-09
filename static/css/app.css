@@ -335,7 +335,7 @@ body[data-layout=horizontal] .navbar-brand-box {
 
 body[data-layout=horizontal] .page-content {
   margin-top: 70px;
-  padding: calc(55px + 24px) calc(24px / 2) 60px calc(24px / 2);
+  padding: calc(75px + 24px) calc(10px / 2) 60px calc(10px / 2);
 }
 
 @media (min-width: 992px) {
