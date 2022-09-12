@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Fund, Company, PriceData
 
+
 # Create your views here.
 
 
@@ -10,7 +11,6 @@ def get_funds(request):
     annual_winners = Fund.objects.order_by("-one_year")
     company_list = Company.objects.order_by("id")
     price_list = PriceData.objects.order_by("-date")
-    # calculate_returns(fund_list, price_list)
     context = {
         "fund_list": fund_list,
         "company_list": company_list,

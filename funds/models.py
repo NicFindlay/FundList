@@ -28,6 +28,7 @@ class Fund(models.Model):
     one_month = models.FloatField(blank=True, null=True)
     six_month = models.FloatField(blank=True, null=True)
     one_year = models.FloatField(blank=True, null=True)
+    chart = models.CharField(max_length=550, blank=True, null=True)
 
     def __str__(self):
         return self.name

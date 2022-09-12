@@ -4,11 +4,29 @@ from funds.models import Fund, Company, PriceData
 def calculate():
     fund_list = Fund.objects.order_by("-market_cap")
     price_list = PriceData.objects.order_by("-date")
-    calculate_returns(fund_list, price_list)
+    calculate_charts()
 
 
 def remove_spam_from_name(name):
     return name.split("(A)", 1)[0]
+
+
+def calculate_charts():
+    fund_list = Fund.objects.order_by("-market_cap")
+    for fund in fund_list:
+        print("Calculating returns " + fund.name)
+        pricequery = PriceData.objects.filter(fund_link=fund.id).order_by("-date")
+        chart = []
+        count = 0
+        for price in pricequery:
+            if count < 10:
+                chart.append(price.price)
+                count = count + 1
+            else:
+                break
+        print(chart)
+        fund.chart = chart
+        fund.save()
 
 
 # Calculate fund returns from Pricing and send to Fund DB
