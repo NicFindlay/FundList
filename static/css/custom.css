@@ -69,9 +69,6 @@
     padding: 5px 24px 1px 24px;
 }
 
-.above-header-content {
-    max-width: 90%;
-}
 
 .above-header p {
     display: inline-block;
@@ -90,10 +87,15 @@
 }
 
 .gradient-text-blue {
-    font-weight: 600;
+    font-weight: 500;
     background: -webkit-gradient(linear, left top, right top, color-stop(0%, #3a85e0), to(#019ce9));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.top-info-section {
+    margin-bottom: 40px;
+
 }
 
 .normal-weight {
