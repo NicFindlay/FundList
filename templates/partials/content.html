@@ -263,75 +263,22 @@
                 </div>
                 <!-- end col -->
 
+            </div>
+            <!-- container-fluid -->
 
-
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title">Static Backdrop</h5>
-                            <p class="card-title-desc">When backdrop is set to static, the modal will not close when
-                                clicking outside it. Click the button below to try it.</p>
-                        </div><!-- end card header -->
-
-                        <div class="card-body">
-                            <div>
-
-                                <!-- Static Backdrop modal Button -->
-                                <button type="button" class="btn btn-primary waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                    Static backdrop modal
-                                </button>
-
-                                <!-- Static Backdrop Modal -->
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                    data-bs-keyboard="false" tabindex="-1" role="dialog"
-                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p>I will not close if you click outside me. Don't even try to press
-                                                    escape key.</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-light"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Understood</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <script>$(window).load(function () {
-                        setTimeout(function () {
-                            $('#staticBackdrop').modal('show');
-                        }, 2000);
-                    });</script>
-
-            </div><!-- end row -->
         </div>
-        <!-- container-fluid -->
+        <!-- End Page-content -->
 
+        <script>
+            setTimeout(function () {
+                $('#staticBackdrop').modal('show');
+            }, 000);
+        </script>
+
+        {% block footer %}
+        {% include 'partials/footer.html'%}
+        {% endblock footer %}
     </div>
-    <!-- End Page-content -->
+    <!-- end main content-->
 
-    <script>
-        setTimeout(function () {
-            $('#staticBackdrop').modal('show');
-        }, 000);
-    </script>
-
-    {% block footer %}
-    {% include 'partials/footer.html'%}
-    {% endblock footer %}
-</div>
-<!-- end main content-->
-
-{% endblock content %}
+    {% endblock content %}
