@@ -70,14 +70,6 @@
                 </button>
             </div>
 
-
-
-            <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item right-bar-toggle me-2">
-                    <i data-feather="settings" class="icon-lg"></i>
-                </button>
-            </div>
-
             {% if not user.is_authenticated %}
             <div class="login-button">
                 <a type="button" class="btn header-button-outline" href="{% url 'account_login' %}">
